@@ -12,7 +12,7 @@
   <body>
     <header class="page-header">
       <nav class="main-nav">
-        <a class="main-nav__logo logo logo--nav" href="index.html" aria-label="Мобильное приложение Pink: на главную страницу">
+        <a class="main-nav__logo logo logo--nav" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
           <svg class="logo__image logo__image--nav-mobile" width="75" height="22" role="img">
             <use xlink:href="img/sprite.svg#logo-pink-white-mobile"></use>
           </svg>
@@ -41,13 +41,108 @@
           </li>
         </ul>
       </nav>
+      <div class="page-header__title-wrapper">
+        <h1 class="page-header__title">Конкурс на самое безбашенное путешествие с Пинк</h1>
+      </div>
     </header>
 
-    <main class="page-main"></main>
+    <main class="page-main">
+      <p class="page-main__intro page-main__intro--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span>Пожалуйста, заполните форму ниже:</span></p>
+      <form class="contest-form" action="https://echo.htmlacademy.ru" method="post">
+        <fieldset class="contest-form__fieldset contest-form__fieldset--name">
+          <ul class="contest-form__list">
+            <li class="contest-form__item contest-form__item--name">
+              <input class="contest-form__text-input" type="text" name="last-name" id="last-name-field" placeholder="Укажите фамилию*" required>
+              <label class="contest-form__text-label" for="last-name-field">Фамилия:</label>
+            </li>
+            <li class="contest-form__item contest-form__item--name">
+              <input class="contest-form__text-input" type="text" name="first-name" id="first-name-field" placeholder="Введите ваше имя*" required>
+              <label class="contest-form__text-label" for="first-name-field">Имя:</label>
+            </li>
+            <li class="contest-form__item contest-form__item--name">
+              <input class="contest-form__text-input" type="text" name="patronymic" id="patronymic-field" placeholder="Ну и отчество тоже">
+              <label class="contest-form__text-label" for="patronymic-field">Отчество:</label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="contest-form__fieldset contest-form__fieldset--achievements">
+          <legend class="contest-form__legend">Ваши безбашенные достижения в путешествии</legend>
+          <ul class="contest-form__list">
+            <li class="contest-form__item contest-form__item--achievements">
+              <input class="contest-form__checkbox visually-hidden" type="checkbox" name="shark" id="shark-field" value="shark" checked>
+              <label class="contest-form__checkbox-label" for="shark-field">Сделал селфи с акулой</label>
+            </li>
+            <li class="contest-form__item contest-form__item--achievements">
+              <input class="contest-form__checkbox visually-hidden" type="checkbox" name="sunburn" id="sunburn-field" value="sunburn" checked>
+              <label class="contest-form__checkbox-label" for="sunburn-field">Обгорел на пляже</label>
+            </li>
+            <li class="contest-form__item contest-form__item--achievements">
+              <input class="contest-form__checkbox visually-hidden" type="checkbox" name="chuck-norris" id="chuck-norris-field" value="chuck-norris">
+              <label class="contest-form__checkbox-label" for="chuck-norris-field">Видел Чака Норриса</label>
+            </li>
+            <li class="contest-form__item contest-form__item--achievements">
+              <input class="contest-form__checkbox visually-hidden" type="checkbox" name="souvenirs" id="souvenirs-field" value="souvenirs">
+              <label class="contest-form__checkbox-label" for="souvenirs-field">Накупил сувениров</label>
+            </li>
+            <li class="contest-form__item contest-form__item--achievements">
+              <input class="contest-form__checkbox visually-hidden" type="checkbox" name="mind" id="mind-field" value="mind" checked>
+              <label class="contest-form__checkbox-label" for="mind-field">Удержал башню</label>
+            </li>
+            <li class="contest-form__item contest-form__item--achievements">
+              <input class="contest-form__checkbox visually-hidden" type="checkbox" name="hotel" id="hotel-field" value="hotel">
+              <label class="contest-form__checkbox-label" for="hotel-field">Разгромил отель</label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="contest-form__fieldset contest-form__fieldset--contacts">
+          <legend class="contest-form__legend">Контактная информация</legend>
+          <ul class="contest-form__list">
+            <li class="contest-form__item contest-form__item--contacts">
+              <input class="contest-form__text-input" type="tel" name="tel" id="tel-field" placeholder="Номер, пожалуйста">
+              <label class="contest-form__text-label contest-form__text-label--tel" for="tel-field">Номер телефона</label>
+            </li>
+            <li class="contest-form__item contest-form__item--contacts">
+              <input class="contest-form__text-input" type="email" name="email" id="email-field" placeholder="Введите почту*" required>
+              <label class="contest-form__text-label contest-form__text-label--email" for="email-field">Адрес почты</label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="contest-form__fieldset contest-form__fieldset--app">
+          <legend class="contest-form__legend">С каким приложением путешествовали?</legend>
+          <ul class="contest-form__list">
+            <li class="contest-form__item contest-form__item--app">
+              <input class="contest-form__radio visually-hidden" type="radio" name="app" id="ios" value="ios" checked>
+              <label class="contest-form__radio-label" for="ios">Pink для iOS</label>
+            </li>
+            <li class="contest-form__item contest-form__item--app">
+              <input class="contest-form__radio visually-hidden" type="radio" name="app" id="android" value="android">
+              <label class="contest-form__radio-label" for="android">Pink на Android</label>
+            </li>
+            <li class="contest-form__item contest-form__item--app">
+              <input class="contest-form__radio visually-hidden" type="radio" name="app" id="windows" value="windows">
+              <label class="contest-form__radio-label" for="windows">Windows Phone</label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="contest-form__fieldset contest-form__fieldset--emotions">
+          <legend class="contest-form__legend">Опишите свои эмоции</legend>
+          <textarea class="contest-form__text-input contest-form__textarea" name="emotions" id="emotions-field" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+        </fieldset>
+
+        <div class="contest-form__submit">
+          <button class="contest-form__button button button--submit" type="submit">Отправить форму</button>
+          <span class="contest-form__footnote"><sup>*</sup> — обязательные поля</span>
+        </div>
+      </form>
+    </main>
 
     <footer class="page-footer">
-      <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Мобильное приложение Pink: на главную страницу">
-        <svg class="logo__image logo__image--footer-tablet" width="147" height="40" role="img">
+      <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
+        <svg class="logo__image logo__image--footer-mobile" width="147" height="40" role="img">
           <use xlink:href="img/sprite.svg#logo-pink-blue-mobile"></use>
         </svg>
         <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img">
@@ -80,6 +175,21 @@
         </a>
       </p>
     </footer>
+
+    <div class="modal modal--error">
+      <p class="modal__title modal__title--error">Что-то пошло не так!</p>
+      <p class="modal__description modal__description--error">Проверьте&nbsp;поля,&nbsp;выделенные красным, скорее&nbsp;всего&nbsp;вы&nbsp;забыли их&nbsp;заполнить</p>
+      <button class="modal__button button button--error" type="button">OK</button>
+    </div>
+
+    <div class="modal modal--success">
+      <div class="modal__text">
+        <p class="modal__title modal__title--success">Ваша заявка отправлена!</p>
+        <p class="modal__description modal__description--success">Спасибо&nbsp;за&nbsp;ваше&nbsp;участие,&nbsp;ваша заявка уже&nbsp;поступила&nbsp;к&nbsp;нам.&nbsp;В ближайшее время&nbsp;мы рассмотрим ее&nbsp;и оповестим&nbsp;вас.</p>
+      </div>
+        <button class="modal__button button button--success" type="button">Закрыть окно</button>
+    </div>
+    <div class="overlay"></div>
 
     <script src="js/svg4everybody.js"></script>
     <script>svg4everybody();</script>
