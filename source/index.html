@@ -2,11 +2,295 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Пинк</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Пинк: Главная</title>
+    <script>
+      document.createElement( "picture" );
+    </script>
+    <script src="js/picturefill.js" async></script>
   </head>
   <body>
+    <header class="page-header">
+      <nav class="main-nav">
+        <a class="main-nav__logo logo logo--nav" aria-label="Логотип мобильного приложения Pink">
+          <svg class="logo__image logo__image--nav-mobile" width="75" height="22" role="img">
+            <use xlink:href="img/sprite.svg#logo-pink-white-mobile"></use>
+          </svg>
+          <svg class="logo__image logo__image--nav-tablet" width="147" height="40" role="img">
+            <use xlink:href="img/sprite.svg#logo-pink-white-tablet"></use>
+          </svg>
+          <svg class="logo__image logo__image--nav-desktop" width="147" height="40" role="img">
+            <use xlink:href="img/sprite.svg#logo-pink-white-desktop"></use>
+          </svg>
+        </a>
+        <button class="main-nav__toggle" type="button">
+          <span class="visually-hidden">Открыть / Закрыть меню</span>
+        </button>
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item site-list__item--active">
+            <a class="site-list__link">Главная</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="photo.html">Фотографии</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="form.html">Конкурс</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="https://htmlacademy.ru">HTML Academy</a>
+          </li>
+        </ul>
+      </nav>
+      <h1 class="visually-hidden">Мобильное приложение Pink</h1>
+      <div class="page-header__download download">
+        <div class="download__wrapper">
+          <b class="download__slogan">Взгляните на жизнь иначе!</b>
+          <a class="download__button button button--download" href="https://www.apple.com/itunes/">Скачать приложение</a>
+          <ul class="download__list">
+            <li class="download__item">
+              <a class="download__link download__link--apple" href="https://www.apple.com/itunes/">
+                <img class="download__logo-image download__logo-image--apple" src="img/logo-apple.svg" width="47" height="56" alt="Логотип компании Apple">
+                <span class="visually-hidden">Скачать для iOS</span>
+              </a>
+            </li>
+            <li class="download__item">
+              <a class="download__link download__link--android" href="https://play.google.com/store/apps">
+                <img class="download__logo-image download__logo-image--android" src="img/logo-android.svg" width="43" height="47" alt="Логотип операционной системы Android">
+                <span class="visually-hidden">Скачать для Android</span>
+              </a>
+            </li>
+            <li class="download__item">
+              <a class="download__link download__link--windows" href="https://www.microsoft.com/ru-ru/store/apps/windows-phone">
+                <img class="download__logo-image download__logo-image--windows" src="img/logo-microsoft.svg" width="44" height="41" alt="Логотип компании Microsoft">
+                <span class="visually-hidden">Скачать для Windows</span>
+              </a>
+            </li>
+          </ul>
+          <p class="download__description">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+        </div>
+      </div>
+    </header>
 
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/adaptive">Профессиональный HTML и CSS</a>», уровень 2.</p>
+    <main class="page-main">
+      <section class="advantages">
+        <h2 class="visually-hidden">Преимущества нашего приложения</h2>
+        <div class="advantages__intro">
+          <p class="advantages__slogan">Устали от серости мегаполиса?</p>
+          <p class="advantages__slogan">Нам есть, что вам <br>предложить!</p>
+        </div>
+        <ul class="advantages__list">
+          <li class="advantages__item">
+            <h3 class="advantages__headline">Поднимает настроение</h3>
+            <p class="advantages__description">Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__headline">Меняет мир вокруг</h3>
+            <p class="advantages__description">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__headline">Заводит новых друзей</h3>
+            <p class="advantages__description">Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых</p>
+          </li>
+        </ul>
+        <div class="advantages__effect effect">
+          <b class="effect__slogan">Эффект на 24 часа!</b>
+          <p class="effect__description">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
+          <a class="effect__more" href="#">Узнать больше об исследовании</a>
+        </div>
+      </section>
 
+      <section class="reviews">
+        <h2 class="visually-hidden">Отзывы</h2>
+        <div class="reviews__wrapper slider">
+          <div class="reviews__inner slider__inner">
+            <div class="reviews__list slider__list">
+              <blockquote class="reviews__item slider__item">
+                <p class="reviews__text"><!-- <span>&laquo;</span> -->«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»<!-- <span>&raquo;</span> --></p>
+                <cite class="reviews__author-info">
+                  <b class="reviews__author-name">Николай Петров</b>
+                  <span class="reviews__author-about">25 лет, водитель трамвая</span>
+                </cite>
+              </blockquote>
+              <blockquote class="reviews__item slider__item">
+                <p class="reviews__text"><span>&laquo;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aut doloribus, assumenda esse laborum non eveniet debitis, quas exercitationem. Doloribus magni, accusantium<span>&raquo;</span>.</p>
+                <cite class="reviews__author-info">
+                  <b class="reviews__author-name">Lorem ipsum</b>
+                  <span class="reviews__author-about">Lorem ipsum dolor sit</span>
+                </cite>
+              </blockquote>
+              <blockquote class="reviews__item slider__item">
+                <p class="reviews__text"><span>&laquo;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aut doloribus, assumenda esse laborum non eveniet debitis, quas exercitationem. Doloribus magni, accusantium<span>&raquo;</span>.</p>
+                <cite class="reviews__author-info">
+                  <b class="reviews__author-name">Lorem ipsum</b>
+                  <span class="reviews__author-about">Lorem ipsum dolor sit</span>
+                </cite>
+              </blockquote>
+            </div>
+            <button class="reviews__arrow reviews__arrow--previous" type="button" name="review-prev">
+              <span class="visually-hidden">Предыдущий отзыв</span>
+            </button>
+            <button class="reviews__arrow reviews__arrow--next" type="button" name="review-next">
+              <span class="visually-hidden">Следующий отзыв</span>
+            </button>
+          </div>
+
+          <input class="slider__radio" type="radio" name="reviews-slider" id="reviews-slide-1" value="1" checked>
+          <input class="slider__radio" type="radio" name="reviews-slider" id="reviews-slide-2" value="2">
+          <input class="slider__radio" type="radio" name="reviews-slider" id="reviews-slide-3" value="3">
+
+          <p class="reviews__toggles slider__toggles">
+            <label class="slider__toggle" for="reviews-slide-1">
+              <span class="visually-hidden">Другой отзыв</span>
+            </label>
+            <label class="slider__toggle" for="reviews-slide-2">
+              <span class="visually-hidden">Другой отзыв</span>
+            </label>
+            <label class="slider__toggle" for="reviews-slide-3">
+              <span class="visually-hidden">Другой отзыв</span>
+            </label>
+          </p>
+        </div>
+      </section>
+
+      <section class="tariffs">
+        <h2 class="visually-hidden">Тарифы</h2>
+        <div class="tariffs__wrapper slider">
+          <div class="tariffs__inner slider__inner">
+            <table class="tariffs__list slider__list">
+              <tr class="tariffs__row">
+                <th class="tariffs__head tariffs__head--null"></th>
+                <th class="tariffs__head">
+                  <h3 class="tariffs__name">База</h3>
+                  <p class="tariffs__price">1,99 USD</p>
+                </th>
+                <th class="tariffs__head tariffs__head--heat">
+                  <h3 class="tariffs__name">Стандарт</h3>
+                  <p class="tariffs__price">3,99 USD</p>
+                </th>
+                <th class="tariffs__head">
+                  <h3 class="tariffs__name">Анлим</h3>
+                  <p class="tariffs__price">9,99 USD</p>
+                </th>
+              </tr>
+              <tr class="tariffs__row">
+                <td class="tariffs__data tariffs__data--additional">Розовый фильтр</td>
+                <td class="tariffs__data tariffs__data--yes">
+                  <p class="tariffs__feature">Розовый фильтр</p>
+                </td>
+                <td class="tariffs__data tariffs__data--yes">
+                  <p class="tariffs__feature">Розовый фильтр</p>
+                </td>
+                <td class="tariffs__data tariffs__data--yes">
+                  <p class="tariffs__feature">Розовый фильтр</p>
+                </td>
+              </tr>
+              <tr class="tariffs__row">
+                <td class="tariffs__data tariffs__data--additional">Смайлики</td>
+                <td class="tariffs__data tariffs__data--no">
+                  <p class="tariffs__feature">Смайлики</p>
+                </td>
+                <td class="tariffs__data tariffs__data--yes">
+                  <p class="tariffs__feature">Смайлики</p>
+                </td>
+                <td class="tariffs__data tariffs__data--yes">
+                  <p class="tariffs__feature">Смайлики</p>
+                </td>
+              </tr>
+              <tr class="tariffs__row">
+                <td class="tariffs__data tariffs__data--additional">Комментарии</td>
+                <td class="tariffs__data tariffs__data--no">
+                  <p class="tariffs__feature">Комментарии</p>
+                </td>
+                <td class="tariffs__data tariffs__data--no">
+                  <p class="tariffs__feature">Комментарии</p>
+                </td>
+                <td class="tariffs__data tariffs__data--yes">
+                  <p class="tariffs__feature">Комментарии</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <input class="slider__radio" type="radio" name="tariffs-slider" id="tariffs-slide-1" value="1">
+          <input class="slider__radio" type="radio" name="tariffs-slider" id="tariffs-slide-2" value="2" checked>
+          <input class="slider__radio" type="radio" name="tariffs-slider" id="tariffs-slide-3" value="3">
+
+          <p class="tariffs__toggles slider__toggles">
+            <label class="slider__toggle" for="tariffs-slide-1">
+              <span class="visually-hidden">База</span>
+            </label>
+            <label class="slider__toggle" for="tariffs-slide-2">
+              <span class="visually-hidden">Стандарт</span>
+            </label>
+            <label class="slider__toggle" for="tariffs-slide-3">
+              <span class="visually-hidden">Анлим</span>
+            </label>
+          </p>
+        </div>
+      </section>
+
+      <section class="contacts">
+        <h2 class="visually-hidden">Контакты</h2>
+        <div class="contacts__text">
+          <p class="contacts__slogan">Остались вопросы?</p>
+          <p class="contacts__slogan">Свяжитесь с нами!</p>
+          <ul class="contacts__list">
+            <li class="contacts__item contacts__item--tel">
+              <b class="contacts__field">Звоните:</b>
+              <a class="contacts__value" href="tel:+78125556666">+7 (812) 555-66-66</a>
+            </li>
+            <li class="contacts__item contacts__item--email">
+              <b class="contacts__field">Пишите:</b>
+              <a class="contacts__value" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+            </li>
+            <li class="contacts__item contacts__item--address">
+              <b class="contacts__field">Приезжайте в гости:</b>
+              <span class="contacts__value">ул. Большая Конюшенная, 19/8</span>
+            </li>
+          </ul>
+        </div>
+        <div class="contacts__map-wrapper">
+          <div class="contacts__map"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <a class="page-footer__logo logo logo--footer" aria-label="Логотип мобильного приложения Pink">
+        <svg class="logo__image logo__image--footer-tablet" width="147" height="40" role="img">
+          <use xlink:href="img/sprite.svg#logo-pink-blue-mobile"></use>
+        </svg>
+        <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img">
+          <use xlink:href="img/sprite.svg#logo-pink-blue-desktop"></use>
+        </svg>
+      </a>
+      <ul class="page-footer__social-list social-list">
+        <li class="social-list__item">
+          <a class="social-list__link social-list__link--twitter" href="https://twitter.com">
+            <span class="visually-hidden">Мы в Твиттере</span>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com">
+            <span class="visually-hidden">Мы в Фейсбуке</span>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link social-list__link--youtube" href="https://www.youtube.com">
+            <span class="visually-hidden">Мы на Ютьюбе</span>
+          </a>
+        </li>
+      </ul>
+      <p class="page-footer__copyright copyright">
+        <b class="copyright__text">Разработано</b>
+        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Переход на сайт в HTML Academy">
+          <svg class="copyright__logo-image" width="27" height="34" role="img">
+            <use xlink:href="img/sprite.svg#logo-htmlacademy"></use>
+          </svg>
+        </a>
+      </p>
+    </footer>
+
+    <script src="js/svg4everybody.js"></script>
+    <script>svg4everybody();</script>
   </body>
 </html>
