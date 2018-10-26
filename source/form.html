@@ -3,23 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Пинк: Конкурс</title>
+    <title>Pink — Конкурс</title>
+    <link rel="stylesheet" href="css/style.css">
     <script>
       document.createElement( "picture" );
     </script>
     <script src="js/picturefill.js" async></script>
   </head>
-  <body>
+  <body class="body">
     <header class="page-header">
-      <nav class="main-nav">
+      <nav class="main-nav main-nav--nojs">
         <a class="main-nav__logo logo logo--nav" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
-          <svg class="logo__image logo__image--nav-mobile" width="75" height="22" role="img">
+          <svg class="logo__image logo__image--nav-mobile" width="75" height="22" fill="currentColor" role="img" focusable="false">
             <use xlink:href="img/sprite.svg#logo-pink-white-mobile"></use>
           </svg>
-          <svg class="logo__image logo__image--nav-tablet" width="147" height="40" role="img">
+          <svg class="logo__image logo__image--nav-tablet" width="147" height="40" fill="currentColor" role="img" focusable="false">
             <use xlink:href="img/sprite.svg#logo-pink-white-tablet"></use>
           </svg>
-          <svg class="logo__image logo__image--nav-desktop" width="147" height="40" role="img">
+          <svg class="logo__image logo__image--nav-desktop" width="147" height="40" fill="currentColor" role="img" focusable="false">
             <use xlink:href="img/sprite.svg#logo-pink-white-desktop"></use>
           </svg>
         </a>
@@ -33,7 +34,7 @@
           <li class="site-list__item">
             <a class="site-list__link" href="photo.html">Фотографии</a>
           </li>
-          <li class="site-list__item site-list__item--active">
+          <li class="site-list__item site-list__item--current">
             <a class="site-list__link">Конкурс</a>
           </li>
           <li class="site-list__item">
@@ -41,13 +42,11 @@
           </li>
         </ul>
       </nav>
-      <div class="page-header__title-wrapper">
-        <h1 class="page-header__title">Конкурс на самое безбашенное путешествие с Пинк</h1>
-      </div>
     </header>
 
     <main class="page-main">
-      <p class="page-main__intro page-main__intro--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span>Пожалуйста, заполните форму ниже:</span></p>
+      <h1 class="page-main__title">Конкурс на самое безбашенное путешествие с Пинк</h1>
+      <p class="page-main__intro page-main__intro--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="page-main__addition">Пожалуйста, заполните форму ниже:</span></p>
       <form class="contest-form" action="https://echo.htmlacademy.ru" method="post">
         <fieldset class="contest-form__fieldset contest-form__fieldset--name">
           <ul class="contest-form__list">
@@ -97,7 +96,7 @@
         </fieldset>
 
         <fieldset class="contest-form__fieldset contest-form__fieldset--contacts">
-          <legend class="contest-form__legend">Контактная информация</legend>
+          <legend class="contest-form__legend contest-form__legend--contacts">Контактная информация</legend>
           <ul class="contest-form__list">
             <li class="contest-form__item contest-form__item--contacts">
               <input class="contest-form__text-input" type="tel" name="tel" id="tel-field" placeholder="Номер, пожалуйста">
@@ -135,62 +134,62 @@
 
         <div class="contest-form__submit">
           <button class="contest-form__button button button--submit" type="submit">Отправить форму</button>
-          <span class="contest-form__footnote"><sup>*</sup> — обязательные поля</span>
+          <span class="contest-form__footnote"><sup>*</sup> — обязательные <span class="contest-form__addition">для заполнения</span> поля</span>
         </div>
       </form>
     </main>
 
     <footer class="page-footer">
       <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
-        <svg class="logo__image logo__image--footer-mobile" width="147" height="40" role="img">
+        <svg class="logo__image logo__image--footer-mobile" width="147" height="40" role="img" focusable="false">
           <use xlink:href="img/sprite.svg#logo-pink-blue-mobile"></use>
         </svg>
-        <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img">
+        <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img"focusable="false">
           <use xlink:href="img/sprite.svg#logo-pink-blue-desktop"></use>
         </svg>
       </a>
       <ul class="page-footer__social-list social-list">
         <li class="social-list__item">
           <a class="social-list__link social-list__link--twitter" href="https://twitter.com">
-            <span class="visually-hidden">Мы в Твиттере</span>
+            <span class="visually-hidden">Twitter</span>
           </a>
         </li>
         <li class="social-list__item">
           <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com">
-            <span class="visually-hidden">Мы в Фейсбуке</span>
+            <span class="visually-hidden">Facebook</span>
           </a>
         </li>
         <li class="social-list__item">
           <a class="social-list__link social-list__link--youtube" href="https://www.youtube.com">
-            <span class="visually-hidden">Мы на Ютьюбе</span>
+            <span class="visually-hidden">Youtube</span>
           </a>
         </li>
       </ul>
       <p class="page-footer__copyright copyright">
         <b class="copyright__text">Разработано</b>
         <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Переход на сайт в HTML Academy">
-          <svg class="copyright__logo-image" width="27" height="34" role="img">
+          <svg class="copyright__logo-image" width="27" height="34" role="img" focusable="false">
             <use xlink:href="img/sprite.svg#logo-htmlacademy"></use>
           </svg>
         </a>
       </p>
     </footer>
 
-    <div class="modal modal--error">
-      <p class="modal__title modal__title--error">Что-то пошло не так!</p>
+    <section class="modal modal--error" role="dialog" aria-labelledby="error-title">
+      <h2 class="modal__title modal__title--error" id="error-title">Что-то пошло не так!</h2>
       <p class="modal__description modal__description--error">Проверьте&nbsp;поля,&nbsp;выделенные красным, скорее&nbsp;всего&nbsp;вы&nbsp;забыли их&nbsp;заполнить</p>
       <button class="modal__button button button--error" type="button">OK</button>
-    </div>
+    </section>
 
-    <div class="modal modal--success">
-      <div class="modal__text">
-        <p class="modal__title modal__title--success">Ваша заявка отправлена!</p>
-        <p class="modal__description modal__description--success">Спасибо&nbsp;за&nbsp;ваше&nbsp;участие,&nbsp;ваша заявка уже&nbsp;поступила&nbsp;к&nbsp;нам.&nbsp;В ближайшее время&nbsp;мы рассмотрим ее&nbsp;и оповестим&nbsp;вас.</p>
-      </div>
-        <button class="modal__button button button--success" type="button">Закрыть окно</button>
-    </div>
+    <section class="modal modal--success" role="dialog" aria-labelledby="success-title">
+      <h2 class="modal__title modal__title--success" id="success-title">Ваша заявка отправлена!</h2>
+      <p class="modal__description modal__description--success">Спасибо&nbsp;за&nbsp;ваше&nbsp;участие,&nbsp;ваша заявка уже&nbsp;поступила&nbsp;к&nbsp;нам.&nbsp;В ближайшее время&nbsp;мы рассмотрим ее&nbsp;и оповестим&nbsp;вас.</p>
+      <button class="modal__button button button--success" type="button">Закрыть окно</button>
+    </section>
+
     <div class="overlay"></div>
 
+    <script src="js/nav.js"></script>
     <script src="js/svg4everybody.js"></script>
     <script>svg4everybody();</script>
   </body>
