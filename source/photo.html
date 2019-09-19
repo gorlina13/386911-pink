@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Пинк: Фотографии</title>
+    <title>Пинк — Фотографии</title>
+    <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/opensanslight.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
     <script>
       document.createElement( "picture" );
     </script>
@@ -11,57 +15,51 @@
   </head>
   <body>
     <header class="page-header">
-      <nav class="main-nav">
+      <nav class="main-nav main-nav--nojs">
         <a class="main-nav__logo logo logo--nav" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
-          <svg class="logo__image logo__image--nav-mobile" width="75" height="22" role="img">
-            <use xlink:href="img/sprite.svg#logo-pink-white-mobile"></use>
+          <svg class="logo__image logo__image--nav-mobile" width="75" height="22" role="img" focusable="false">
+            <use xlink:href="img/sprite.svg#logo-pink-white-mobile" aria-hidden="true"></use>
           </svg>
-          <svg class="logo__image logo__image--nav-tablet" width="147" height="40" role="img">
-            <use xlink:href="img/sprite.svg#logo-pink-white-tablet"></use>
+          <svg class="logo__image logo__image--nav-tablet" width="147" height="40" role="img" focusable="false">
+            <use xlink:href="img/sprite.svg#logo-pink-white-tablet" aria-hidden="true"></use>
           </svg>
-          <svg class="logo__image logo__image--nav-desktop" width="147" height="40" role="img">
-            <use xlink:href="img/sprite.svg#logo-pink-white-desktop"></use>
+          <svg class="logo__image logo__image--nav-desktop" width="147" height="40" role="img" focusable="false">
+            <use xlink:href="img/sprite.svg#logo-pink-white-desktop" aria-hidden="true"></use>
           </svg>
         </a>
         <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Открыть / Закрыть меню</span>
+          <span class="visually-hidden">Меню</span>
         </button>
         <ul class="main-nav__list site-list">
           <li class="site-list__item">
             <a class="site-list__link" href="index.html">Главная</a>
           </li>
-          <li class="site-list__item">
-            <a class="site-list__link site-list__item--active">Фотографии</a>
+          <li class="site-list__item site-list__item--current">
+            <a class="site-list__link">Фотографии</a>
           </li>
           <li class="site-list__item">
             <a class="site-list__link" href="form.html">Конкурс</a>
           </li>
           <li class="site-list__item">
-            <a class="site-list__link" href="https://htmlacademy.ru">HTML Academy</a>
+            <a class="site-list__link" href="https://htmlacademy.ru" lang="en">HTML Academy</a>
           </li>
         </ul>
       </nav>
-      <div class="page-header__title-wrapper">
-        <h1 class="page-header__title">Фотографии пользователей</h1>
-      </div>
     </header>
 
-    <main class="page-main">
-      <p class="page-main__intro page-main__intro--photo">Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?</p>
+    <main>
+      <div class="intro">
+        <h1 class="intro__title">Фотографии пользователей</h1>
+      </div>
 
-      <section class="photos">
-        <h2 class="visually-hidden">Наши пользователи и их фото</h2>
-        <article class="photo photo--panorama">
-          <a class="photo__link photo__link--panorama" href="#">
-            <picture>
-              <source media="(min-width: 960px)" srcset="img/panorama-desktop@1x.jpg 1x, img/panorama-desktop@2x.jpg 2x">
-              <source media="(min-width: 660px)" srcset="img/panorama-tablet@1x.jpg 1x, img/panorama-tablet@2x.jpg 2x">
-              <img class="photo__preview-image" src="img/panorama-mobile@1x.jpg" srcset="img/panorama-mobile@2x.jpg 2x" alt="Панорамный вид с высоты">
-            </picture>
-          </a>
+      <section class="feed">
+        <h2 class="visually-hidden">Недавние публикации</h2>
+        <p class="feed__description">Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?</p>
+
+        <article class="feed__panorama photo photo--panorama" aria-label="Панорама дня">
           <div class="photo__info">
             <h3 class="photo__user">
-              <b class="photo__name">Анна</b> <span class="photo__time">(5 минут назад)</span>
+              <b class="photo__name">Анна </b><time class="photo__time" datetime="2019-09-19">(5 минут назад)</time>
             </h3>
             <p class="photo__description">Прыгать или нет? Напишите в коментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!</p>
             <div class="photo__likes likes">
@@ -73,168 +71,190 @@
               </p>
             </div>
           </div>
-        </article>
-
-        <article class="photo">
-          <a class="photo__link" href="#">
+          <a class="photo__link photo__link--panorama" href="#">
             <picture>
-              <source media="(min-width: 960px)" srcset="img/photo-car-desktop@1x.jpg 1x, img/photo-car-desktop@2x.jpg 2x">
-              <source media="(min-width: 660px)" srcset="img/photo-car-tablet@1x.jpg 1x, img/photo-car-tablet@2x.jpg 2x">
-              <img class="photo__preview-image" src="img/photo-car-mobile@1x.jpg" srcset="img/photo-car-mobile@2x.jpg 2x" alt="Фото автомобиля">
+              <source media="(min-width: 960px)" srcset="img/panorama-desktop@1x.jpg 1x, img/panorama-desktop@2x.jpg 2x">
+              <source media="(min-width: 660px)" srcset="img/panorama-tablet@1x.jpg 1x, img/panorama-tablet@2x.jpg 2x">
+              <img class="photo__image" src="img/panorama-mobile@1x.jpg" srcset="img/panorama-mobile@2x.jpg 2x" alt="Висячий мост, вид на горы и леса под ним.">
             </picture>
           </a>
-          <div class="photo__info">
-            <h3 class="photo__user">
-              <b class="photo__name">Левон</b> <span class="photo__time">(5 часов назад)</span>
-            </h3>
-            <p class="photo__description">Вчера он на луну летал, сегодня в руки к нам попал.</p>
-            <div class="photo__likes likes">
-              <button class="likes__button" type="button">
-                <span class="visually-hidden">Нравится!</span>
-              </button>
-              <p class="likes__text">
-                Нравится: <span class="likes__count">356</span>
-              </p>
-            </div>
-          </div>
         </article>
 
-        <article class="photo">
-          <a class="photo__link" href="#">
-            <picture>
-              <source media="(min-width: 960px)" srcset="img/photo-drumset-desktop@1x.jpg 1x, img/photo-drumset-desktop@2x.jpg 2x">
-              <source media="(min-width: 660px)" srcset="img/photo-drumset-tablet@1x.jpg 1x, img/photo-drumset-tablet@2x.jpg 2x">
-              <img class="photo__preview-image" src="img/photo-drumset-mobile@1x.jpg" srcset="img/photo-drumset-mobile@2x.jpg 2x" alt="Барабанная установка">
-            </picture>
-          </a>
-          <div class="photo__info">
-            <h3 class="photo__user">
-              <b class="photo__name">Антон</b> <span class="photo__time">(12 часов назад)</span>
-            </h3>
-            <p class="photo__description">Соседи будут рады!</p>
-            <div class="photo__likes likes">
-              <button class="likes__button" type="button">
-                <span class="visually-hidden">Нравится!</span>
-              </button>
-              <p class="likes__text">
-                Нравится: <span class="likes__count">666</span>
-              </p>
-            </div>
-          </div>
-        </article>
+        <ul class="feed__list">
+          <li class="feed__item">
+            <article class="photo">
+              <div class="photo__info">
+                <h3 class="photo__user">
+                  <b class="photo__name">Левон </b><time class="photo__time" datetime="2019-09-19">(5 часов назад)</time>
+                </h3>
+                <p class="photo__description">Вчера он на луну летал, сегодня в руки к нам попал.</p>
+                <div class="photo__likes likes">
+                  <button class="likes__button" type="button">
+                    <span class="visually-hidden">Нравится!</span>
+                  </button>
+                  <p class="likes__text">
+                    Нравится: <span class="likes__count">356</span>
+                  </p>
+                </div>
+              </div>
+              <a class="photo__link" href="#">
+                <picture>
+                  <source media="(min-width: 960px)" srcset="img/photo-car-desktop@1x.jpg 1x, img/photo-car-desktop@2x.jpg 2x">
+                  <source media="(min-width: 660px)" srcset="img/photo-car-tablet@1x.jpg 1x, img/photo-car-tablet@2x.jpg 2x">
+                  <img class="photo__image" src="img/photo-car-mobile@1x.jpg" srcset="img/photo-car-mobile@2x.jpg 2x" alt="Фотоаппарат на треножнике и белый автомобиль в глубине кадра.">
+                </picture>
+              </a>
+            </article>
+          </li>
 
-        <article class="photo">
-          <a class="photo__link" href="#">
-            <picture>
-              <source media="(min-width: 960px)" srcset="img/photo-window-desktop@1x.jpg 1x, img/photo-window-desktop@2x.jpg 2x">
-              <source media="(min-width: 660px)" srcset="img/photo-window-tablet@1x.jpg 1x, img/photo-window-tablet@2x.jpg 2x">
-              <img class="photo__preview-image" src="img/photo-window-mobile@1x.jpg" srcset="img/photo-window-mobile@2x.jpg 2x" alt="Вид на небо сквозь стеклянную крышу">
-            </picture>
-          </a>
-          <div class="photo__info">
-            <h3 class="photo__user">
-              <b class="photo__name">Борис</b> <span class="photo__time">(20 часов назад)</span>
-            </h3>
-            <p class="photo__description">Здесь могла быть ваша цитата о высоком и вечном.</p>
-            <div class="photo__likes likes">
-              <button class="likes__button" type="button">
-                <span class="visually-hidden">Нравится!</span>
-              </button>
-              <p class="likes__text">
-                Нравится: <span class="likes__count">215</span>
-              </p>
-            </div>
-          </div>
-        </article>
+          <li class="feed__item">
+            <article class="photo">
+              <div class="photo__info">
+                <h3 class="photo__user">
+                  <b class="photo__name">Антон </b><time class="photo__time" datetime="2019-09-19">(12 часов назад)</time>
+                </h3>
+                <p class="photo__description">Соседи будут рады!</p>
+                <div class="photo__likes likes">
+                  <button class="likes__button" type="button">
+                    <span class="visually-hidden">Нравится!</span>
+                  </button>
+                  <p class="likes__text">
+                    Нравится: <span class="likes__count">666</span>
+                  </p>
+                </div>
+              </div>
+              <a class="photo__link" href="#">
+                <picture>
+                  <source media="(min-width: 960px)" srcset="img/photo-drumset-desktop@1x.jpg 1x, img/photo-drumset-desktop@2x.jpg 2x">
+                  <source media="(min-width: 660px)" srcset="img/photo-drumset-tablet@1x.jpg 1x, img/photo-drumset-tablet@2x.jpg 2x">
+                  <img class="photo__image" src="img/photo-drumset-mobile@1x.jpg" srcset="img/photo-drumset-mobile@2x.jpg 2x" alt="Барабанная установка.">
+                </picture>
+              </a>
+            </article>
+          </li>
 
-        <article class="photo">
-          <a class="photo__link" href="#">
-            <picture>
-              <source media="(min-width: 960px)" srcset="img/photo-fair-desktop@1x.jpg 1x, img/photo-fair-desktop@2x.jpg 2x">
-              <source media="(min-width: 660px)" srcset="img/photo-fair-tablet@1x.jpg 1x, img/photo-fair-tablet@2x.jpg 2x">
-              <img class="photo__preview-image" src="img/photo-fair-mobile@1x.jpg" srcset="img/photo-fair-mobile@2x.jpg 2x" alt="Продажа дынь и арбузов">
-            </picture>
-          </a>
-          <div class="photo__info">
-            <h3 class="photo__user">
-              <b class="photo__name">Сергей</b> <span class="photo__time">(25 часов назад)</span>
-            </h3>
-            <p class="photo__description">Самая кубанская в мире!</p>
-            <div class="photo__likes likes">
-              <button class="likes__button" type="button">
-                <span class="visually-hidden">Нравится!</span>
-              </button>
-              <p class="likes__text">
-                Нравится: <span class="likes__count">4</span>
-              </p>
-            </div>
-          </div>
-        </article>
+          <li class="feed__item">
+            <article class="photo">
+              <div class="photo__info">
+                <h3 class="photo__user">
+                  <b class="photo__name">Борис </b><time class="photo__time" datetime="2019-09-18">(20 часов назад)</time>
+                </h3>
+                <p class="photo__description">Здесь могла быть ваша цитата о высоком и вечном.</p>
+                <div class="photo__likes likes">
+                  <button class="likes__button" type="button">
+                    <span class="visually-hidden">Нравится!</span>
+                  </button>
+                  <p class="likes__text">
+                    Нравится: <span class="likes__count">215</span>
+                  </p>
+                </div>
+              </div>
+              <a class="photo__link" href="#">
+                <picture>
+                  <source media="(min-width: 960px)" srcset="img/photo-window-desktop@1x.jpg 1x, img/photo-window-desktop@2x.jpg 2x">
+                  <source media="(min-width: 660px)" srcset="img/photo-window-tablet@1x.jpg 1x, img/photo-window-tablet@2x.jpg 2x">
+                  <img class="photo__image" src="img/photo-window-mobile@1x.jpg" srcset="img/photo-window-mobile@2x.jpg 2x" alt="Небо и облака, видимые сквозь стеклянную крышу.">
+                </picture>
+              </a>
+            </article>
+          </li>
 
-        <article class="photo">
-          <a class="photo__link" href="#">
-            <picture>
-              <source media="(min-width: 960px)" srcset="img/photo-pov-desktop@1x.jpg 1x, img/photo-pov-desktop@2x.jpg 2x">
-              <source media="(min-width: 660px)" srcset="img/photo-pov-tablet@1x.jpg 1x, img/photo-pov-tablet@2x.jpg 2x">
-              <img class="photo__preview-image" src="img/photo-pov-mobile@1x.jpg" srcset="img/photo-pov-mobile@2x.jpg 2x" alt="Вид с вершины горы">
-            </picture>
-          </a>
-          <div class="photo__info">
-            <h3 class="photo__user">
-              <b class="photo__name">Максим</b> <span class="photo__time">(40 часов назад)</span>
-            </h3>
-            <p class="photo__description">Где снег-то?</p>
-            <div class="photo__likes likes">
-              <button class="likes__button" type="button">
-                <span class="visually-hidden">Нравится!</span>
-              </button>
-              <p class="likes__text">
-                Нравится: <span class="likes__count">150</span>
-              </p>
-            </div>
-          </div>
-        </article>
+          <li class="feed__item">
+            <article class="photo">
+              <div class="photo__info">
+                <h3 class="photo__user">
+                  <b class="photo__name">Сергей </b><time class="photo__time" datetime="2019-09-18">(25 часов назад)</time>
+                </h3>
+                <p class="photo__description">Самая кубанская в мире!</p>
+                <div class="photo__likes likes">
+                  <button class="likes__button" type="button">
+                    <span class="visually-hidden">Нравится!</span>
+                  </button>
+                  <p class="likes__text">
+                    Нравится: <span class="likes__count">4</span>
+                  </p>
+                </div>
+              </div>
+              <a class="photo__link" href="#">
+                <picture>
+                  <source media="(min-width: 960px)" srcset="img/photo-fair-desktop@1x.jpg 1x, img/photo-fair-desktop@2x.jpg 2x">
+                  <source media="(min-width: 660px)" srcset="img/photo-fair-tablet@1x.jpg 1x, img/photo-fair-tablet@2x.jpg 2x">
+                  <img class="photo__image" src="img/photo-fair-mobile@1x.jpg" srcset="img/photo-fair-mobile@2x.jpg 2x" alt="Продажа дынь и арбузов на рынке.">
+                </picture>
+              </a>
+            </article>
+          </li>
 
-        <article class="photo">
-          <a class="photo__link" href="#">
-            <picture>
-              <source media="(min-width: 960px)" srcset="img/photo-wing-desktop@1x.jpg 1x, img/photo-wing-desktop@2x.jpg 2x">
-              <source media="(min-width: 660px)" srcset="img/photo-wing-tablet@1x.jpg 1x, img/photo-wing-tablet@2x.jpg 2x">
-              <img class="photo__preview-image" src="img/photo-wing-mobile@1x.jpg" srcset="img/photo-wing-mobile@2x.jpg 2x" alt="Вид с самолета">
-            </picture>
-          </a>
-          <div class="photo__info">
-            <h3 class="photo__user">
-              <b class="photo__name">Надежда</b> <span class="photo__time">(45 часов назад)</span>
-            </h3>
-            <p class="photo__description">Всем GM и взаимные лайки!</p>
-            <div class="photo__likes likes">
-              <button class="likes__button" type="button">
-                <span class="visually-hidden">Нравится!</span>
-              </button>
-              <p class="likes__text">
-                Нравится: <span class="likes__count">2560</span>
-              </p>
-            </div>
-          </div>
-        </article>
+          <li class="feed__item">
+            <article class="photo">
+              <div class="photo__info">
+                <h3 class="photo__user">
+                  <b class="photo__name">Максим </b><time class="photo__time" datetime="2019-09-18">(40 часов назад)</time>
+                </h3>
+                <p class="photo__description">Где снег-то?</p>
+                <div class="photo__likes likes">
+                  <button class="likes__button" type="button">
+                    <span class="visually-hidden">Нравится!</span>
+                  </button>
+                  <p class="likes__text">
+                    Нравится: <span class="likes__count">150</span>
+                  </p>
+                </div>
+              </div>
+              <a class="photo__link" href="#">
+                <picture>
+                  <source media="(min-width: 960px)" srcset="img/photo-pov-desktop@1x.jpg 1x, img/photo-pov-desktop@2x.jpg 2x">
+                  <source media="(min-width: 660px)" srcset="img/photo-pov-tablet@1x.jpg 1x, img/photo-pov-tablet@2x.jpg 2x">
+                  <img class="photo__image" src="img/photo-pov-mobile@1x.jpg" srcset="img/photo-pov-mobile@2x.jpg 2x" alt="Вид с вершины горы.">
+                </picture>
+              </a>
+            </article>
+          </li>
+
+          <li class="feed__item">
+            <article class="photo">
+              <div class="photo__info">
+                <h3 class="photo__user">
+                  <b class="photo__name">Надежда </b><time class="photo__time" datetime="2019-09-17">(45 часов назад)</time>
+                </h3>
+                <p class="photo__description">Всем GM и взаимные лайки!</p>
+                <div class="photo__likes likes">
+                  <button class="likes__button" type="button">
+                    <span class="visually-hidden">Нравится!</span>
+                  </button>
+                  <p class="likes__text">
+                    Нравится: <span class="likes__count">2560</span>
+                  </p>
+                </div>
+              </div>
+              <a class="photo__link" href="#">
+                <picture>
+                  <source media="(min-width: 960px)" srcset="img/photo-wing-desktop@1x.jpg 1x, img/photo-wing-desktop@2x.jpg 2x">
+                  <source media="(min-width: 660px)" srcset="img/photo-wing-tablet@1x.jpg 1x, img/photo-wing-tablet@2x.jpg 2x">
+                  <img class="photo__image" src="img/photo-wing-mobile@1x.jpg" srcset="img/photo-wing-mobile@2x.jpg 2x" alt="Крыло самолета, солнце над ним и земля далеко внизу.">
+                </picture>
+              </a>
+            </article>
+          </li>
+        </ul>
       </section>
 
       <section class="upload">
         <h2 class="visually-hidden">Редактор для обработки ваших фото</h2>
-        <p class="upload__intro">Затмите их всех! Выкладывайте все, что накопилось в телефоне!</p>
-        <form class="upload__form upload-form" action="https://echo.htmlacademy.ru" method="post" enctype="multipart/form-data">
+        <p class="upload__description">Затмите их всех! Выкладывайте все, что накопилось в телефоне!</p>
+
+        <form class="upload__form upload-form" action="https://echo.htmlacademy.ru" method="post" enctype="multipart/form-data" aria-label="Форма для выгрузки и обработки фото">
           <input class="visually-hidden" type="file" name="photo">
           <picture>
             <source media="(min-width: 960px)" srcset="img/photo-road-desktop@1x.jpg 1x, img/photo-road-desktop@2x.jpg 2x">
             <source media="(min-width: 660px)" srcset="img/photo-road-tablet@1x.jpg 1x, img/photo-road-tablet@2x.jpg 2x">
-            <img class="upload-form__preview-image" src="img/photo-road-mobile@1x.jpg" srcset="img/photo-road-mobile@2x.jpg 2x" alt="Зимняя дорога">
+            <img class="upload-form__preview-image" src="img/photo-road-mobile@1x.jpg" srcset="img/photo-road-mobile@2x.jpg 2x" alt="Зимняя дорога.">
           </picture>
           <div class="upload-form__processing">
-            <ul class="upload-form__tools-list">
-              <li class="upload-form__tools-item upload-form__tools-item--active">
+            <ul class="upload-form__tool-list">
+              <li class="upload-form__tool-item upload-form__tool-item--active">
                 <button class="upload-form__button upload-form__button--crop" type="button">
-                  <svg class="upload-form__icon upload-form__icon--crop" width="44" height="44" aria-hidden="true" role="presentation">
+                  <svg class="upload-form__icon upload-form__icon--crop" width="44" height="44" aria-hidden="true" focusable="false">
                     <use xlink:href="img/sprite.svg#icon-editor-crop"></use>
                   </svg>
                   <span class="visually-hidden">Кадрирование</span>
@@ -245,9 +265,9 @@
                   </button>
                 </div>
               </li>
-              <li class="upload-form__tools-item">
+              <li class="upload-form__tool-item">
                 <button class="upload-form__button upload-form__button--fill" type="button">
-                  <svg class="upload-form__icon upload-form__icon--fill" width="48" height="43" aria-hidden="true" role="presentation">
+                  <svg class="upload-form__icon upload-form__icon--fill" width="48" height="43" aria-hidden="true" focusable="false">
                     <use xlink:href="img/sprite.svg#icon-editor-fill"></use>
                   </svg>
                   <span class="visually-hidden">Заливка цветом</span>
@@ -258,9 +278,9 @@
                   </button>
                 </div>
               </li>
-              <li class="upload-form__tools-item">
+              <li class="upload-form__tool-item">
                 <button class="upload-form__button upload-form__button--contrast" type="button">
-                  <svg class="upload-form__icon upload-form__icon--contrast" width="48" height="43" aria-hidden="true" role="presentation">
+                  <svg class="upload-form__icon upload-form__icon--contrast" width="48" height="43" aria-hidden="true" focusable="false">
                     <use xlink:href="img/sprite.svg#icon-editor-contrast"></use>
                   </svg>
                   <span class="visually-hidden">Контрастность</span>
@@ -272,8 +292,14 @@
                 </div>
               </li>
             </ul>
-            <button class="upload-form__submit button button--upload" type="submit">Запостить</button>
-            <button class="upload-form__reset button button--reset" type="reset">Отмена</button>
+            <ul class="upload-form__buttons">
+              <li>
+                <button class="upload-form__submit button button--upload" type="submit">Запостить</button>
+              </li>
+              <li>
+                <button class="upload-form__cancel button button--cancel" type="reset">Отмена</button>
+              </li>
+            </ul>
           </div>
         </form>
       </section>
@@ -281,40 +307,41 @@
 
     <footer class="page-footer">
       <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
-        <svg class="logo__image logo__image--footer-mobile" width="147" height="40" role="img">
-          <use xlink:href="img/sprite.svg#logo-pink-blue-mobile"></use>
+        <svg class="logo__image logo__image--footer-mobile" width="147" height="40" role="img" focusable="false">
+          <use xlink:href="img/sprite.svg#logo-pink-blue-mobile" aria-hidden="true"></use>
         </svg>
-        <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img">
-          <use xlink:href="img/sprite.svg#logo-pink-blue-desktop"></use>
+        <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img" focusable="false">
+          <use xlink:href="img/sprite.svg#logo-pink-blue-desktop" aria-hidden="true"></use>
         </svg>
       </a>
       <ul class="page-footer__social-list social-list">
         <li class="social-list__item">
           <a class="social-list__link social-list__link--twitter" href="https://twitter.com">
-            <span class="visually-hidden">Мы в Твиттере</span>
+            <span class="visually-hidden" lang="en">Twitter</span>
           </a>
         </li>
         <li class="social-list__item">
           <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com">
-            <span class="visually-hidden">Мы в Фейсбуке</span>
+            <span class="visually-hidden" lang="en">Facebook</span>
           </a>
         </li>
         <li class="social-list__item">
           <a class="social-list__link social-list__link--youtube" href="https://www.youtube.com">
-            <span class="visually-hidden">Мы на Ютьюбе</span>
+            <span class="visually-hidden" lang="en">Youtube</span>
           </a>
         </li>
       </ul>
       <p class="page-footer__copyright copyright">
         <b class="copyright__text">Разработано</b>
-        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Переход на сайт в HTML Academy">
-          <svg class="copyright__logo-image" width="27" height="34" role="img">
-            <use xlink:href="img/sprite.svg#logo-htmlacademy"></use>
+        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Переход на сайт HTML Academy">
+          <svg class="copyright__logo-image" width="27" height="34" role="img" focusable="false">
+            <use xlink:href="img/sprite.svg#logo-htmlacademy" aria-hidden="true"></use>
           </svg>
         </a>
       </p>
     </footer>
 
+    <script src="js/nav.js"></script>
     <script src="js/svg4everybody.js"></script>
     <script>svg4everybody();</script>
   </body>
