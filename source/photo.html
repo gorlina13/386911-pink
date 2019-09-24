@@ -7,24 +7,28 @@
     <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/opensanslight.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <script>
       document.createElement( "picture" );
     </script>
-    <script src="js/picturefill.js" async></script>
+    <script src="js/picturefill.min.js" async></script>
   </head>
   <body>
+    <div style="display:none">
+      <include src="build/img/sprite.svg"></include>
+    </div>
+
     <header class="page-header">
       <nav class="main-nav main-nav--nojs">
         <a class="main-nav__logo logo logo--nav" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
           <svg class="logo__image logo__image--nav-mobile" width="75" height="22" role="img" focusable="false">
-            <use xlink:href="img/sprite.svg#logo-pink-white-mobile" aria-hidden="true"></use>
+            <use xlink:href="#for-s-logo-pink-white-mobile" aria-hidden="true"></use>
           </svg>
           <svg class="logo__image logo__image--nav-tablet" width="147" height="40" role="img" focusable="false">
-            <use xlink:href="img/sprite.svg#logo-pink-white-tablet" aria-hidden="true"></use>
+            <use xlink:href="#for-s-logo-pink-white-tablet" aria-hidden="true"></use>
           </svg>
           <svg class="logo__image logo__image--nav-desktop" width="147" height="40" role="img" focusable="false">
-            <use xlink:href="img/sprite.svg#logo-pink-white-desktop" aria-hidden="true"></use>
+            <use xlink:href="#for-s-logo-pink-white-desktop" aria-hidden="true"></use>
           </svg>
         </a>
         <button class="main-nav__toggle" type="button">
@@ -255,7 +259,7 @@
               <li class="upload-form__tool-item upload-form__tool-item--active">
                 <button class="upload-form__button upload-form__button--crop" type="button">
                   <svg class="upload-form__icon upload-form__icon--crop" width="44" height="44" aria-hidden="true" focusable="false">
-                    <use xlink:href="img/sprite.svg#icon-editor-crop"></use>
+                    <use xlink:href="#for-s-icon-editor-crop"></use>
                   </svg>
                   <span class="visually-hidden">Кадрирование</span>
                 </button>
@@ -268,7 +272,7 @@
               <li class="upload-form__tool-item">
                 <button class="upload-form__button upload-form__button--fill" type="button">
                   <svg class="upload-form__icon upload-form__icon--fill" width="48" height="43" aria-hidden="true" focusable="false">
-                    <use xlink:href="img/sprite.svg#icon-editor-fill"></use>
+                    <use xlink:href="#for-s-icon-editor-fill"></use>
                   </svg>
                   <span class="visually-hidden">Заливка цветом</span>
                 </button>
@@ -281,7 +285,7 @@
               <li class="upload-form__tool-item">
                 <button class="upload-form__button upload-form__button--contrast" type="button">
                   <svg class="upload-form__icon upload-form__icon--contrast" width="48" height="43" aria-hidden="true" focusable="false">
-                    <use xlink:href="img/sprite.svg#icon-editor-contrast"></use>
+                    <use xlink:href="#for-s-icon-editor-contrast"></use>
                   </svg>
                   <span class="visually-hidden">Контрастность</span>
                 </button>
@@ -308,10 +312,10 @@
     <footer class="page-footer">
       <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
         <svg class="logo__image logo__image--footer-mobile" width="147" height="40" role="img" focusable="false">
-          <use xlink:href="img/sprite.svg#logo-pink-blue-mobile" aria-hidden="true"></use>
+          <use xlink:href="#for-s-logo-pink-blue-mobile" aria-hidden="true"></use>
         </svg>
         <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img" focusable="false">
-          <use xlink:href="img/sprite.svg#logo-pink-blue-desktop" aria-hidden="true"></use>
+          <use xlink:href="#for-s-logo-pink-blue-desktop" aria-hidden="true"></use>
         </svg>
       </a>
       <ul class="page-footer__social-list social-list">
@@ -333,16 +337,14 @@
       </ul>
       <p class="page-footer__copyright copyright">
         <b class="copyright__text">Разработано</b>
-        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Переход на сайт HTML Academy">
+        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="HTML Academy: переход на сайт">
           <svg class="copyright__logo-image" width="27" height="34" role="img" focusable="false">
-            <use xlink:href="img/sprite.svg#logo-htmlacademy" aria-hidden="true"></use>
+            <use xlink:href="#for-s-logo-htmlacademy" aria-hidden="true"></use>
           </svg>
         </a>
       </p>
     </footer>
 
-    <script src="js/nav.js"></script>
-    <script src="js/svg4everybody.js"></script>
-    <script>svg4everybody();</script>
+    <script src="js/nav.min.js"></script>
   </body>
 </html>

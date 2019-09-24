@@ -7,24 +7,28 @@
     <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/opensanslight.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <script>
       document.createElement( "picture" );
     </script>
-    <script src="js/picturefill.js" async></script>
+    <script src="js/picturefill.min.js" async></script>
   </head>
   <body>
+    <div style="display:none">
+      <include src="build/img/sprite.svg"></include>
+    </div>
+
     <header class="page-header">
       <nav class="main-nav main-nav--nojs">
         <a class="main-nav__logo logo logo--nav" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
           <svg class="logo__image logo__image--nav-mobile" width="75" height="22" role="img" focusable="false">
-            <use xlink:href="img/sprite.svg#logo-pink-white-mobile" aria-hidden="true"></use>
+            <use xlink:href="#for-s-logo-pink-white-mobile" aria-hidden="true"></use>
           </svg>
           <svg class="logo__image logo__image--nav-tablet" width="147" height="40" role="img" focusable="false">
-            <use xlink:href="img/sprite.svg#logo-pink-white-tablet" aria-hidden="true"></use>
+            <use xlink:href="#for-s-logo-pink-white-tablet" aria-hidden="true"></use>
           </svg>
           <svg class="logo__image logo__image--nav-desktop" width="147" height="40" role="img" focusable="false">
-            <use xlink:href="img/sprite.svg#logo-pink-white-desktop" aria-hidden="true"></use>
+            <use xlink:href="#for-s-logo-pink-white-desktop" aria-hidden="true"></use>
           </svg>
         </a>
         <button class="main-nav__toggle" type="button">
@@ -142,7 +146,7 @@
 
         <div class="contest-form__bottom">
           <span class="contest-form__footnote"><sup>*</sup> — обязательные <span class="contest-form__addition">для заполнения</span> поля</span>
-          <button class="contest-form__button button button--submit" type="submit">Отправить форму</button>
+          <button class="contest-form__button button button--submit" type="submit" aria-haspopup="dialog">Отправить форму</button>
         </div>
       </form>
     </main>
@@ -150,10 +154,10 @@
     <footer class="page-footer">
       <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
         <svg class="logo__image logo__image--footer-mobile" width="147" height="40" role="img" focusable="false">
-          <use xlink:href="img/sprite.svg#logo-pink-blue-mobile" aria-hidden="true"></use>
+          <use xlink:href="#for-s-logo-pink-blue-mobile" aria-hidden="true"></use>
         </svg>
         <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img" focusable="false">
-          <use xlink:href="img/sprite.svg#logo-pink-blue-desktop" aria-hidden="true"></use>
+          <use xlink:href="#for-s-logo-pink-blue-desktop" aria-hidden="true"></use>
         </svg>
       </a>
       <ul class="page-footer__social-list social-list">
@@ -175,9 +179,9 @@
       </ul>
       <p class="page-footer__copyright copyright">
         <b class="copyright__text">Разработано</b>
-        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Переход на сайт HTML Academy">
+        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="HTML Academy: переход на сайт">
           <svg class="copyright__logo-image" width="27" height="34" role="img" focusable="false">
-            <use xlink:href="img/sprite.svg#logo-htmlacademy" aria-hidden="true"></use>
+            <use xlink:href="#for-s-logo-htmlacademy" aria-hidden="true"></use>
           </svg>
         </a>
       </p>
@@ -197,8 +201,6 @@
 
     <div class="overlay"></div>
 
-    <script src="js/nav.js"></script>
-    <script src="js/svg4everybody.js"></script>
-    <script>svg4everybody();</script>
+    <script src="js/nav.min.js"></script>
   </body>
 </html>
