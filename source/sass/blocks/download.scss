@@ -1,0 +1,126 @@
+.download {
+  padding: 1.5555em 1.1111em 1.7777em;
+
+  color: $body-bg-color;
+
+  background-color: $download-bg-color;
+}
+
+.download__title {
+  margin: 0;
+  margin-bottom: 1.7777em;
+
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.download__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  @include fix-list();
+}
+
+.download__item {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  margin: 0 1em 1.2222em;
+}
+
+.download__link {
+  display: block;
+
+  &--apple,
+  &--apple .download__logo-image {
+    width: 2.6111em;
+    height: 3.1111em;
+  }
+
+  &--android,
+  &--android .download__logo-image {
+    width: 2.3888em;
+    height: 2.6111em;
+  }
+
+  &--android {
+    margin-top: 0.3333em;
+  }
+
+  &--windows,
+  &--windows .download__logo-image {
+    width: 2.4444em;
+    height: 2.2777em;
+  }
+
+  &--windows {
+    margin-top: 0.4444em;
+  }
+}
+
+.download__logo-image {
+  display: block;
+}
+
+.download__description {
+  margin: 0;
+
+  font-weight: 300;
+  font-size: 0.7777em;
+  line-height: 1.7143em;
+  text-align: center;
+}
+
+@media (min-width: $tablet-width) {
+  .download {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 18.3333em;
+    padding-top: 1.8333em;
+    padding-right: 0.5555em;
+
+    background-color: transparent;
+  }
+
+  .download__title {
+    margin-bottom: 2.5555em;
+  }
+
+  .download__list {
+    margin-bottom: 0.8333em;
+  }
+
+  .download__link--android {
+    margin-top: 0.1111em;
+  }
+
+  .download__description {
+    font-size: inherit;
+    line-height: 1.3333em;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .download {
+    padding-left: 0.5555em;
+    padding-right: 1.1111em;
+  }
+
+  .download__title {
+    margin-bottom: 3.7777em;
+  }
+
+  .download__list {
+    margin-bottom: 1.8888em;
+  }
+
+  .download__link--android {
+    margin-top: 0.3333em;
+  }
+}
