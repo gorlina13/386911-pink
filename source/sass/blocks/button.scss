@@ -1,0 +1,141 @@
+.button {
+  display: block;
+
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    @include hover-transition();
+  }
+
+  &--form {
+    width: 100%;
+    padding: 0.6666em 0.5em 0.7222em;
+
+    line-height: 1.6666em;
+    text-transform: uppercase;
+    color: $body-bg-color;
+
+    background-color: $button-bg-color;
+    border: 2px solid transparent;
+    border-radius: 2%;
+  }
+
+  &--form:hover,
+  &--form:focus {
+    background-color: #1c9b5e;
+  }
+
+  &--form:active {
+    color: rgba($body-bg-color, 0.3);
+  }
+
+  &--form:disabled,
+  &--form-disabled {
+    background-color: #e5e5e5;
+  }
+
+  &--download,
+  &--upload,
+  &--cancel {
+    width: 100%;
+    padding: 0.3888em 0.5em 0.5555em;
+
+    background-color: transparent;
+    border-radius: 1.6666em;
+  }
+
+  &--download {
+    color: inherit;
+
+    border: 3px solid $body-bg-color;
+  }
+
+  &--download:hover,
+  &--download:focus {
+    color: $pink-color;
+
+    background-color: $body-bg-color;
+  }
+
+  &--download:active {
+    color: rgba($pink-color, 0.3);
+  }
+
+  &--upload {
+    color: $pink-color;
+
+    border: 3px solid $pink-color;
+  }
+
+  &--upload:hover,
+  &--upload:focus {
+    color: $body-bg-color;
+
+    background-color: $pink-color;
+  }
+
+  &--upload:active {
+    color: rgba($body-bg-color, 0.3);
+  }
+
+  &--cancel {
+    color: $body-color;
+
+    border: 3px solid $body-color;
+    opacity: 0.1;
+  }
+
+  &--cancel:hover,
+  &--cancel:focus {
+    opacity: 0.3;
+  }
+
+  &--cancel:active {
+    color: $body-bg-color;
+
+    background-color: $body-color;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .button {
+    &--submit {
+      width: 48.387%;
+    }
+
+    &--success,
+    &--error {
+      width: 65.2174%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .button {
+    &--download {
+      padding: 0.3809em 0.4286em 0.4286em;
+
+      font-size: 1.1666em;
+      line-height: 1.5238em;
+    }
+
+    &--upload,
+    &--cancel {
+      width: 44.6341%;
+    }
+
+    &--submit {
+      width: 31.9149%;
+    }
+
+    &--success {
+      width: 58.9744%;
+    }
+  }
+}
