@@ -20,34 +20,36 @@
 
     <header class="page-header">
       <nav class="main-nav main-nav--nojs">
-        <a class="main-nav__logo logo logo--nav" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
-          <svg class="logo__image logo__image--nav-mobile" width="75" height="22" role="img" focusable="false">
-            <use xlink:href="#for-s-logo-pink-white-mobile" aria-hidden="true"></use>
-          </svg>
-          <svg class="logo__image logo__image--nav-tablet" width="147" height="40" role="img" focusable="false">
-            <use xlink:href="#for-s-logo-pink-white-tablet" aria-hidden="true"></use>
-          </svg>
-          <svg class="logo__image logo__image--nav-desktop" width="147" height="40" role="img" focusable="false">
-            <use xlink:href="#for-s-logo-pink-white-desktop" aria-hidden="true"></use>
-          </svg>
-        </a>
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Меню</span>
-        </button>
-        <ul class="main-nav__list site-list">
-          <li class="site-list__item">
-            <a class="site-list__link" href="index.html">Главная</a>
-          </li>
-          <li class="site-list__item site-list__item--current">
-            <a class="site-list__link">Фотографии</a>
-          </li>
-          <li class="site-list__item">
-            <a class="site-list__link" href="form.html">Конкурс</a>
-          </li>
-          <li class="site-list__item">
-            <a class="site-list__link" href="https://htmlacademy.ru" lang="en">HTML Academy</a>
-          </li>
-        </ul>
+        <div class="main-nav__wrapper">
+          <a class="main-nav__logo" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
+            <svg class="main-nav__logo-image main-nav__logo-image--mobile" width="75" height="22" role="img" focusable="false">
+              <use xlink:href="#for-s-logo-pink-white-mobile" aria-hidden="true"></use>
+            </svg>
+            <svg class="main-nav__logo-image main-nav__logo-image--tablet" width="147" height="40" role="img" focusable="false">
+              <use xlink:href="#for-s-logo-pink-white-tablet" aria-hidden="true"></use>
+            </svg>
+            <svg class="main-nav__logo-image main-nav__logo-image--desktop" width="147" height="40" role="img" focusable="false">
+              <use xlink:href="#for-s-logo-pink-white-desktop" aria-hidden="true"></use>
+            </svg>
+          </a>
+          <button class="main-nav__toggle" type="button">
+            <span class="visually-hidden">Меню</span>
+          </button>
+          <ul class="main-nav__list site-list">
+            <li class="site-list__item">
+              <a class="site-list__link" href="index.html">Главная</a>
+            </li>
+            <li class="site-list__item site-list__item--current">
+              <a class="site-list__link">Фотографии</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="form.html">Конкурс</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="https://htmlacademy.ru" lang="en">HTML Academy</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -265,7 +267,7 @@
                 </button>
                 <div class="upload-form__scale">
                   <button class="upload-form__control upload-form__control--crop" type="button">
-                    <span class="visually-hidden">Управлять кадрированием</span>
+                    <span class="visually-hidden">Обрезать кадр</span>
                   </button>
                 </div>
               </li>
@@ -278,7 +280,7 @@
                 </button>
                 <div class="upload-form__scale">
                   <button class="upload-form__control upload-form__control--fill" type="button">
-                    <span class="visually-hidden">Отрегулировать заливку</span>
+                    <span class="visually-hidden">Управлять заливкой</span>
                   </button>
                 </div>
               </li>
@@ -310,11 +312,11 @@
     </main>
 
     <footer class="page-footer">
-      <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
-        <svg class="logo__image logo__image--footer-mobile" width="147" height="40" role="img" focusable="false">
+      <a class="page-footer__logo" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
+        <svg class="page-footer__logo-image page-footer__logo-image--mobile" width="147" height="40" role="img" focusable="false">
           <use xlink:href="#for-s-logo-pink-blue-mobile" aria-hidden="true"></use>
         </svg>
-        <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img" focusable="false">
+        <svg class="page-footer__logo-image page-footer__logo-image--desktop" width="147" height="40" role="img" focusable="false">
           <use xlink:href="#for-s-logo-pink-blue-desktop" aria-hidden="true"></use>
         </svg>
       </a>

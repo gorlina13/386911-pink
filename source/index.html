@@ -20,65 +20,69 @@
 
     <header class="page-header">
       <nav class="main-nav main-nav--nojs">
-        <a class="main-nav__logo logo logo--nav">
-          <svg class="logo__image logo__image--nav-mobile" width="75" height="22" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
-            <use xlink:href="#for-s-logo-pink-white-mobile" aria-hidden="true"></use>
-          </svg>
-          <svg class="logo__image logo__image--nav-tablet" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
-            <use xlink:href="#for-s-logo-pink-white-tablet" aria-hidden="true"></use>
-          </svg>
-          <svg class="logo__image logo__image--nav-desktop" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
-            <use xlink:href="#for-s-logo-pink-white-desktop" aria-hidden="true"></use>
-          </svg>
-        </a>
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Меню</span>
-        </button>
-        <ul class="main-nav__list site-list">
-          <li class="site-list__item site-list__item--current">
-            <a class="site-list__link">Главная</a>
-          </li>
-          <li class="site-list__item">
-            <a class="site-list__link" href="photo.html">Фотографии</a>
-          </li>
-          <li class="site-list__item">
-            <a class="site-list__link" href="form.html">Конкурс</a>
-          </li>
-          <li class="site-list__item">
-            <a class="site-list__link" href="https://htmlacademy.ru" lang="en">HTML Academy</a>
-          </li>
-        </ul>
+        <div class="main-nav__wrapper">
+          <a class="main-nav__logo">
+            <svg class="main-nav__logo-image main-nav__logo-image--mobile" width="75" height="22" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
+              <use xlink:href="#for-s-logo-pink-white-mobile" aria-hidden="true"></use>
+            </svg>
+            <svg class="main-nav__logo-image main-nav__logo-image--tablet" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
+              <use xlink:href="#for-s-logo-pink-white-tablet" aria-hidden="true"></use>
+            </svg>
+            <svg class="main-nav__logo-image main-nav__logo-image--desktop" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
+              <use xlink:href="#for-s-logo-pink-white-desktop" aria-hidden="true"></use>
+            </svg>
+          </a>
+          <button class="main-nav__toggle" type="button">
+            <span class="visually-hidden">Меню</span>
+          </button>
+          <ul class="main-nav__list site-list">
+            <li class="site-list__item site-list__item--current">
+              <a class="site-list__link">Главная</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="photo.html">Фотографии</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="form.html">Конкурс</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="https://htmlacademy.ru" lang="en">HTML Academy</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
     <main>
       <div class="intro intro--index">
         <h1 class="visually-hidden">Мобильное приложение Пинк</h1>
-        <p class="intro__slogan">Взгляните на жизнь иначе!</p>
+        <div class="intro__wrapper">
+          <p class="intro__slogan">Взгляните на&nbsp;жизнь иначе!</p>
 
-        <section class="intro__download download">
-          <h2 class="download__title">
-            <a class="download__button button button--download" href="https://www.apple.com/itunes/">Скачать приложение</a>
-          </h2>
-          <ul class="download__list">
-            <li class="download__item">
-              <a class="download__link download__link--apple" href="https://www.apple.com/itunes/">
-                <img class="download__logo-image" src="img/logo-apple.svg" width="47" height="56" role="img" alt="Логотип компании Apple. Скачать Пинк для iOS.">
-              </a>
-            </li>
-            <li class="download__item">
-              <a class="download__link download__link--android" href="https://play.google.com/store/apps">
-                <img class="download__logo-image" src="img/logo-android.svg" width="43" height="47" role="img" alt="Логотип Android. Скачать Пинк для Android.">
-              </a>
-            </li>
-            <li class="download__item">
-              <a class="download__link download__link--windows" href="https://www.microsoft.com/ru-ru/store/apps/windows-phone">
-                <img class="download__logo-image" src="img/logo-microsoft.svg" width="44" height="41" role="img" alt="Логотип компании Microsoft. Скачать Пинк для Windows.">
-              </a>
-            </li>
-          </ul>
-          <p class="download__description">Доступно для <span lang="en">iPhone, iPad, Android, Windows Phone, OS X, Windows 8</span></p>
-        </section>
+          <section class="intro__download download">
+            <h2 class="download__title">
+              <a class="download__button button button--download" href="https://www.apple.com/itunes/">Скачать приложение</a>
+            </h2>
+            <ul class="download__list">
+              <li class="download__item">
+                <a class="download__link download__link--apple" href="https://www.apple.com/itunes/">
+                  <img class="download__logo-image" src="img/logo-apple.svg" width="47" height="56" role="img" alt="Логотип компании Apple. Скачать Пинк для iOS.">
+                </a>
+              </li>
+              <li class="download__item">
+                <a class="download__link download__link--android" href="https://play.google.com/store/apps">
+                  <img class="download__logo-image" src="img/logo-android.svg" width="43" height="47" role="img" alt="Логотип Android. Скачать Пинк для Android.">
+                </a>
+              </li>
+              <li class="download__item">
+                <a class="download__link download__link--windows" href="https://www.microsoft.com/ru-ru/store/apps/windows-phone">
+                  <img class="download__logo-image" src="img/logo-microsoft.svg" width="44" height="41" role="img" alt="Логотип компании Microsoft. Скачать Пинк для Windows.">
+                </a>
+              </li>
+            </ul>
+            <p class="download__description">Доступно для <span lang="en">iPhone, iPad, Android, Windows Phone, OS X, Windows 8</span></p>
+          </section>
+        </div>
       </div>
 
       <section class="advantages">
@@ -296,11 +300,11 @@
     </main>
 
     <footer class="page-footer page-footer--index">
-      <a class="page-footer__logo logo logo--footer">
-        <svg class="logo__image logo__image--footer-mobile" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
+      <a class="page-footer__logo">
+        <svg class="page-footer__logo-image page-footer__logo-image--mobile" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
           <use xlink:href="#for-s-logo-pink-blue-mobile" aria-hidden="true"></use>
         </svg>
-        <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
+        <svg class="page-footer__logo-image page-footer__logo-image--desktop" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
           <use xlink:href="#for-s-logo-pink-blue-desktop" aria-hidden="true"></use>
         </svg>
       </a>

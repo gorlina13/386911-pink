@@ -20,40 +20,42 @@
 
     <header class="page-header">
       <nav class="main-nav main-nav--nojs">
-        <a class="main-nav__logo logo logo--nav" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
-          <svg class="logo__image logo__image--nav-mobile" width="75" height="22" role="img" focusable="false">
-            <use xlink:href="#for-s-logo-pink-white-mobile" aria-hidden="true"></use>
-          </svg>
-          <svg class="logo__image logo__image--nav-tablet" width="147" height="40" role="img" focusable="false">
-            <use xlink:href="#for-s-logo-pink-white-tablet" aria-hidden="true"></use>
-          </svg>
-          <svg class="logo__image logo__image--nav-desktop" width="147" height="40" role="img" focusable="false">
-            <use xlink:href="#for-s-logo-pink-white-desktop" aria-hidden="true"></use>
-          </svg>
-        </a>
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Меню</span>
-        </button>
-        <ul class="main-nav__list site-list">
-          <li class="site-list__item">
-            <a class="site-list__link" href="index.html">Главная</a>
-          </li>
-          <li class="site-list__item">
-            <a class="site-list__link" href="photo.html">Фотографии</a>
-          </li>
-          <li class="site-list__item site-list__item--current">
-            <a class="site-list__link">Конкурс</a>
-          </li>
-          <li class="site-list__item">
-            <a class="site-list__link" href="https://htmlacademy.ru" lang="en">HTML Academy</a>
-          </li>
-        </ul>
+        <div class="main-nav__wrapper">
+          <a class="main-nav__logo" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
+            <svg class="main-nav__logo-image main-nav__logo-image--mobile" width="75" height="22" role="img" focusable="false">
+              <use xlink:href="#for-s-logo-pink-white-mobile" aria-hidden="true"></use>
+            </svg>
+            <svg class="main-nav__logo-image main-nav__logo-image--tablet" width="147" height="40" role="img" focusable="false">
+              <use xlink:href="#for-s-logo-pink-white-tablet" aria-hidden="true"></use>
+            </svg>
+            <svg class="main-nav__logo-image main-nav__logo-image--desktop" width="147" height="40" role="img" focusable="false">
+              <use xlink:href="#for-s-logo-pink-white-desktop" aria-hidden="true"></use>
+            </svg>
+          </a>
+          <button class="main-nav__toggle" type="button">
+            <span class="visually-hidden">Меню</span>
+          </button>
+          <ul class="main-nav__list site-list">
+            <li class="site-list__item">
+              <a class="site-list__link" href="index.html">Главная</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="photo.html">Фотографии</a>
+            </li>
+            <li class="site-list__item site-list__item--current">
+              <a class="site-list__link">Конкурс</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="https://htmlacademy.ru" lang="en">HTML Academy</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
     <main>
       <div class="intro">
-        <h1 class="intro__title">Конкурс на самое безбашенное путешествие с Пинк</h1>
+        <h1 class="intro__title intro__title--form">Конкурс на самое безбашенное путешествие с Пинк</h1>
       </div>
 
       <form class="contest-form" action="https://echo.htmlacademy.ru" method="post" aria-label="Форма для участия в конкурсе" aria-describedby="contest-form-description">
@@ -146,17 +148,17 @@
 
         <div class="contest-form__bottom">
           <span class="contest-form__footnote"><sup>*</sup> — обязательные <span class="contest-form__addition">для заполнения</span> поля</span>
-          <button class="contest-form__button button button--submit" type="submit" aria-haspopup="dialog">Отправить форму</button>
+          <button class="contest-form__button button button--form button--submit" type="submit" aria-haspopup="dialog">Отправить форму</button>
         </div>
       </form>
     </main>
 
     <footer class="page-footer">
-      <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
-        <svg class="logo__image logo__image--footer-mobile" width="147" height="40" role="img" focusable="false">
+      <a class="page-footer__logo" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
+        <svg class="page-footer__logo-image page-footer__logo-image--mobile" width="147" height="40" role="img" focusable="false">
           <use xlink:href="#for-s-logo-pink-blue-mobile" aria-hidden="true"></use>
         </svg>
-        <svg class="logo__image logo__image--footer-desktop" width="147" height="40" role="img" focusable="false">
+        <svg class="page-footer__logo-image page-footer__logo-image--desktop" width="147" height="40" role="img" focusable="false">
           <use xlink:href="#for-s-logo-pink-blue-desktop" aria-hidden="true"></use>
         </svg>
       </a>
@@ -190,13 +192,13 @@
     <section class="modal modal--error" role="dialog" aria-labelledby="error-dialog-title">
       <h2 class="modal__title modal__title--error" id="error-dialog-title">Что-то пошло не так!</h2>
       <p class="modal__description modal__description--error">Проверьте&nbsp;поля,&nbsp;выделенные красным, скорее&nbsp;всего&nbsp;вы&nbsp;забыли их&nbsp;заполнить</p>
-      <button class="modal__button button button--error" type="button">OK</button>
+      <button class="modal__button button button--form button--error" type="button">OK</button>
     </section>
 
     <section class="modal modal--success" role="dialog" aria-labelledby="success-dialog-title">
       <h2 class="modal__title modal__title--success" id="success-dialog-title">Ваша заявка отправлена!</h2>
       <p class="modal__description modal__description--success">Спасибо&nbsp;за&nbsp;ваше&nbsp;участие,&nbsp;ваша заявка уже&nbsp;поступила&nbsp;к&nbsp;нам.&nbsp;В ближайшее время&nbsp;мы рассмотрим ее&nbsp;и оповестим&nbsp;вас.</p>
-      <button class="modal__button button button--success" type="button">Закрыть окно</button>
+      <button class="modal__button button button--form button--success" type="button">Закрыть окно</button>
     </section>
 
     <div class="overlay"></div>
