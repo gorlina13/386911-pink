@@ -1,0 +1,219 @@
+.intro {
+  position: relative;
+
+  min-height: 9.4444em;
+
+  background-color: $body-color;
+
+  &--index::before {
+    content: "";
+
+    position: relative;
+    z-index: 10;
+
+    display: block;
+    max-width: 17.7777em;
+    min-height: 21.9444em;
+    margin: 0 auto;
+
+    background-image: url("../img/iphone-hand-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/iphone-hand-mobile@2x.png");
+      background-size: 14.3333em auto;
+    }
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: -3.6666em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-image: url("../img/bg-back-mobile@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 100% auto;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-back-mobile@2x.jpg");
+      background-position: 50% -0.2222em;
+      background-size: 38.8888em auto;
+    }
+  }
+}
+
+.intro__wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.intro__title {
+  position: relative;
+  z-index: 10;
+
+  max-width: 13.3333em;
+  margin: 0 auto;
+  padding: 1.25em 0.8333em;
+
+  font-weight: 300;
+  font-size: 1.33333em;
+  line-height: 1.25em;
+  text-align: center;
+  color: $body-bg-color;
+}
+
+.intro__slogan {
+  display: none;
+
+  color: $body-bg-color;
+}
+
+@media (min-width: $tablet-width) {
+  .intro {
+    min-height: 18.2777em;
+
+    &--index {
+      display: flex;
+
+      min-height: 34.3333em;
+    }
+
+    &--index::before {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      max-width: 100%;
+      width: 100%;
+      min-height: 30.2777em;
+      height: 30.2777em;
+      margin: 0;
+
+      background-image: url("../img/iphone-hand-tablet@1x.png");
+      background-position: 50% 100%;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/iphone-hand-tablet@2x.png");
+        background-size: 38.8888em auto;
+      }
+    }
+
+    &::after {
+      top: -6.1111em;
+
+      background-image: url("../img/bg-back-tablet@1x.jpg");
+      background-size: auto;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/bg-back-tablet@2x.jpg");
+        background-position: 50% 0;
+        background-size: 66.6666em auto;
+      }
+    }
+  }
+
+  .intro__wrapper {
+    flex-shrink: 0;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+    min-height: 34.3333em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .intro__title {
+    max-width: 13.2em;
+    padding: 1.42em 0.4em;
+
+    font-size: 2.7777em;
+    line-height: 1.2em;
+  }
+
+  .intro__slogan {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    display: block;
+    width: 8.25em;
+    margin: 0;
+    padding-top: 0.375em;
+    padding-left: 0.5em;
+    padding-right: 0.25em;
+
+    font-weight: 300;
+    font-size: 2.2222em;
+    line-height: 1.2em;
+    text-align: center;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .intro {
+    min-height: 15.7777em;
+
+    &--index {
+      min-height: 41.2777em;
+    }
+
+    &--index::before {
+      left: 0;
+
+      max-width: 53.3333em;
+      min-height: 35.8333em;
+      height: 35.8333em;
+      margin: 0 auto;
+
+      background-image: url("../img/iphone-hand-desktop@1x.png");
+      background-position: -30% 100%;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/iphone-hand-desktop@2x.png");
+        background-size: 58.3333em auto;
+      }
+    }
+
+    &::after {
+      background-image: url("../img/bg-back-desktop@1x.jpg");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/bg-back-desktop@2x.jpg");
+        background-size: 142.2222em auto;
+      }
+    }
+  }
+
+  .intro__wrapper {
+    max-width: 53.3333em;
+    min-height: 41.2777em;
+    margin: 0 auto;
+  }
+
+  .intro__title {
+    padding: 1.28em 0.2em;
+
+    &--form {
+      max-width: 19.2em;
+    }
+  }
+
+  .intro__slogan {
+    width: 6.6em;
+    margin-bottom: 0.42em;
+    padding-top: 0.36em;
+    padding-left: 0.2em;
+    padding-right: 0.4em;
+
+    font-size: 2.7777em;
+  }
+}
