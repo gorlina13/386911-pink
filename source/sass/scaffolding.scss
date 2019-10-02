@@ -45,7 +45,7 @@ html {
   margin: 0;
   padding: 0;
 
-  font-size: 87.5%;
+  font-size: 112.5%;
 }
 
 *,
@@ -55,17 +55,19 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: 17.7778rem;
   margin: 0;
   padding: 0;
 
   font-family: $font-family;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.7143;
-  color: $dark-blue-color;
+  line-height: 1.7778;
+  color: $body-color;
 
-  background-color: #ffffff;
+  @include break-word();
+
+  background-color: $body-bg-color;
 }
 
 img {
