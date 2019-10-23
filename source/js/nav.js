@@ -3,7 +3,7 @@
 (function () {
   function findElements() {
     var nav = document.querySelector('.main-nav');
-    var navToggle = document.querySelector('.main-nav__toggle');
+    var navToggle = nav.querySelector('.main-nav__toggle');
 
     if (nav !== null && navToggle !== null) {
       var mainNav = new MainNav(nav, navToggle);
