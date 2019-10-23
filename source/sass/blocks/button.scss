@@ -14,7 +14,7 @@
 
   &--form {
     width: 100%;
-    padding: 0.6666em 0.5em 0.7222em;
+    padding: 0.8333em 0.5em;
 
     line-height: 1.6666em;
     text-transform: uppercase;
@@ -36,7 +36,12 @@
 
   &--form:disabled,
   &--form-disabled {
-    background-color: #e5e5e5;
+    background-color: $border-color;
+  }
+
+  &--success,
+  &--error {
+    width: 15.5555em;
   }
 
   &--download,
@@ -111,7 +116,6 @@
     &--success,
     &--error {
       width: 65.2174%;
-      margin: 0 auto;
     }
   }
 }
