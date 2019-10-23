@@ -15,7 +15,7 @@
   display: block;
   padding: 1.2222em 1.1111em 1.3888em;
 
-  color: inherit;
+  @include app-logo-color();
 
   .main-nav--closed & {
     padding-bottom: 1.2222em;
@@ -23,18 +23,6 @@
 
   &[href] {
     cursor: pointer;
-  }
-
-  &[href]:hover,
-  &:focus {
-    color: $pink-color;
-
-    @include hover-transition();
-  }
-
-  &[href]:active {
-    color: inherit;
-    opacity: 0.3;
   }
 }
 
