@@ -1,0 +1,62 @@
+.copyright {
+  padding-top: 1.8333em;
+
+  text-align: center;
+}
+
+.copyright__text {
+  display: inline-block;
+  max-width: 57%;
+  margin-right: 0.7142em;
+  padding-bottom: 0.5em;
+
+  font-weight: 400;
+  font-size: 0.7778em;
+  line-height: 1.2857em;
+  vertical-align: middle;
+}
+
+.copyright__link {
+  display: inline-block;
+
+  color: $pink-color;
+  vertical-align: top;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+
+    @include hover-transition();
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__logo-image {
+  display: block;
+  width: 1.5em;
+  height: 1.8889em;
+
+  fill: currentColor;
+}
+
+@media (min-width: $tablet-width) {
+  .copyright {
+    width: 33.3333%;
+    padding-top: 0.7777em;
+    padding-left: 1.1111em;
+
+    text-align: right;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .copyright__text {
+    margin-right: 0.5em;
+
+    font-size: 1em;
+    line-height: 1em;
+  }
+}
