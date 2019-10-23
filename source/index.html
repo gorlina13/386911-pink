@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Пинк — Главная</title>
     <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
@@ -87,37 +88,39 @@
 
       <section class="advantages">
         <h2 class="visually-hidden">Что умеет Пинк</h2>
-        <p class="advantages__slogan">Устали от серости мегаполиса?</p>
-        <p class="advantages__slogan advantages__slogan--narrow">Нам есть что вам предложить!</p>
+        <div class="advantages__top">
+          <p class="advantages__slogan advantages__slogan--wide">Устали от серости мегаполиса?</p>
+          <p class="advantages__slogan">Нам есть что вам предложить!</p>
+        </div>
         <ul class="advantages__list">
           <li class="advantages__item advantage">
             <h3 class="advantage__title">Поднимает настроение</h3>
-            <p class="advantage__description">Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
+            <p class="advantage__description">Приложение позволит вам победить осеннюю хандру и&nbsp;депрессию буквально в несколько кликов!</p>
           </li>
           <li class="advantages__item advantage">
             <h3 class="advantage__title">Меняет мир вокруг</h3>
-            <p class="advantage__description">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+            <p class="advantage__description">Сделайте снимок и украсьте&nbsp;его смайликом или&nbsp;текстовой подписью, чтобы усилить&nbsp;эффект</p>
           </li>
           <li class="advantages__item advantage">
             <h3 class="advantage__title">Заводит новых друзей</h3>
             <p class="advantage__description">Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых</p>
           </li>
         </ul>
-        <div class="advantages__effect effect">
-          <b class="effect__hours">24</b>
-          <p class="effect__text">
-            <b class="effect__slogan">Эффект на 24 часа!</b>
-            Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!
-            <a class="effect__more" href="#">Узнать больше об исследовании</a>
-          </p>
-        </div>
+        <p class="advantages__effect effect">
+          <b class="effect__hours" role="presentation">24</b>
+          <span class="effect__wrapper">
+            <b class="effect__slogan">Эффект на&nbsp;24&nbsp;часа!</b>
+            <span class="effect__description">Британские ученые провели исследования и&nbsp;доказали, что&nbsp;положительный эффект от&nbsp;использования приложения длится целые сутки!</span>
+            <a class="effect__link" href="#">Узнать больше об исследовании</a>
+          </span>
+        </p>
       </section>
 
       <section class="reviews">
         <h2 class="visually-hidden">Отзывы</h2>
-        <div class="reviews__slider slider slider--reviews">
+        <div class="slider slider--reviews slider--with-buttons">
           <div class="slider__inner" role="region" aria-label="Слайдер с отзывами">
-            <ul class="slider__slides slider__slides--show-1">
+            <ul class="slider__slides slider__slides--list slider__slides--show-1">
               <li class="slider__item">
                 <blockquote class="reviews__blockquote">
                   <cite class="reviews__author">
@@ -133,7 +136,7 @@
                     <b class="reviews__name">Lorem ipsum</b>
                     <span class="reviews__about">Lorem ipsum dolor sit</span>
                   </cite>
-                  <p class="reviews__text">&laquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aut doloribus, assumenda esse laborum non eveniet debitis, quas exercitationem. Doloribus magni, accusantium&raquo;.</p>
+                  <p class="reviews__text">&laquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, minima laboriosam quo pariatur dicta nihil.&raquo;.</p>
                 </blockquote>
               </li>
               <li class="slider__item">
@@ -142,14 +145,14 @@
                     <b class="reviews__name">Lorem ipsum</b>
                     <span class="reviews__about">Lorem ipsum dolor sit</span>
                   </cite>
-                  <p class="reviews__text">&laquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aut doloribus, assumenda esse laborum non eveniet debitis, quas exercitationem. Doloribus magni, accusantium&raquo;.</p>
+                  <p class="reviews__text">&laquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, eaque esse officiis neque adipisci quis harum.&raquo;.</p>
                 </blockquote>
               </li>
             </ul>
           </div>
           <ul class="slider__controls slider__controls--reviews">
             <li>
-              <button class="slider__control slider__control--active" type="button">
+              <button class="slider__control slider__control--current" type="button">
                 <span class="visually-hidden">Первый отзыв</span>
               </button>
             </li>
@@ -164,7 +167,7 @@
               </button>
             </li>
           </ul>
-          <ul class="slider__buttons slider__buttons--reviews">
+          <ul class="slider__buttons">
             <li>
               <button class="slider__button slider__button--prev" type="button" disabled>
                 <span class="visually-hidden">Предыдущий отзыв</span>
@@ -181,87 +184,91 @@
 
       <section class="tariffs">
         <h2 class="visually-hidden">Тарифы</h2>
-        <div class="tariffs__slider slider slider--tariffs">
-          <div class="slider__inner" role="region" aria-label="Слайдер с таблицей тарифов">
-            <table class="tariffs__slides slider__slides slider__slides--show-2">
-              <tr class="tariffs__row">
-                <th class="tariffs__head tariffs__head--empty">
-                  <span class="visually-hidden">Доступные опции</span>
-                </th>
-                <th class="tariffs__head">
-                  <b class="tariffs__name">База</b>
-                  <span class="tariffs__price">1,99 USD</span>
-                </th>
-                <th class="tariffs__head tariffs__head--hit">
-                  <b class="tariffs__name">Стандарт</b>
-                  <span class="tariffs__price">3,99 USD</span>
-                </th>
-                <th class="tariffs__head">
-                  <b class="tariffs__name">Анлим</b>
-                  <span class="tariffs__price">9,99 USD</span>
-                </th>
-              </tr>
-              <tr class="tariffs__row">
-                <td class="tariffs__data tariffs__data--additional">Розовый фильтр</td>
-                <td class="tariffs__data tariffs__data--yes">
-                  <span class="tariffs__feature">Розовый фильтр</span>
-                  <span class="tariffs__boolean visually-hidden">Да</span>
-                </td>
-                <td class="tariffs__data tariffs__data--yes">
-                  <span class="tariffs__feature">Розовый фильтр</span>
-                  <span class="tariffs__boolean visually-hidden">Да</span>
-                </td>
-                <td class="tariffs__data tariffs__data--yes">
-                  <span class="tariffs__feature">Розовый фильтр</span>
-                  <span class="tariffs__boolean visually-hidden">Да</span>
-                </td>
-              </tr>
-              <tr class="tariffs__row">
-                <td class="tariffs__data tariffs__data--additional">Смайлики</td>
-                <td class="tariffs__data tariffs__data--no">
-                  <span class="tariffs__feature">Смайлики</span>
-                  <span class="tariffs__boolean visually-hidden">Нет</span>
-                </td>
-                <td class="tariffs__data tariffs__data--yes">
-                  <span class="tariffs__feature">Смайлики</span>
-                  <span class="tariffs__boolean visually-hidden">Да</span>
-                </td>
-                <td class="tariffs__data tariffs__data--yes">
-                  <span class="tariffs__feature">Смайлики</span>
-                  <span class="tariffs__boolean visually-hidden">Да</span>
-                </td>
-              </tr>
-              <tr class="tariffs__row">
-                <td class="tariffs__data tariffs__data--additional">Комментарии</td>
-                <td class="tariffs__data tariffs__data--no">
-                  <span class="tariffs__feature">Комментарии</span>
-                  <span class="tariffs__boolean visually-hidden">Нет</span>
-                </td>
-                <td class="tariffs__data tariffs__data--no">
-                  <span class="tariffs__feature">Комментарии</span>
-                  <span class="tariffs__boolean visually-hidden">Нет</span>
-                </td>
-                <td class="tariffs__data tariffs__data--yes">
-                  <span class="tariffs__feature">Комментарии</span>
-                  <span class="tariffs__boolean visually-hidden">Да</span>
-                </td>
-              </tr>
+        <div class="slider slider--tariffs">
+          <div class="slider__inner">
+            <table class="tariffs__table slider__slides slider__slides--show-2">
+              <thead>
+                <tr class="tariffs__row">
+                  <th class="tariffs__head tariffs__head--transparent">
+                    <span class="visually-hidden">Доступные опции</span>
+                  </th>
+                  <th class="tariffs__head">
+                    <b class="tariffs__name">База</b>
+                    <span class="tariffs__price">1,99 USD</span>
+                  </th>
+                  <th class="tariffs__head tariffs__head--hit">
+                    <b class="tariffs__name tariffs__name--hit">
+                      Стандарт
+                      <span class="tariffs__sticker">Хит</span>
+                    </b>
+                    <span class="tariffs__price">3,99 USD</span>
+                  </th>
+                  <th class="tariffs__head">
+                    <b class="tariffs__name">Анлим</b>
+                    <span class="tariffs__price">9,99 USD</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tariffs__row tariffs__row--filter">
+                  <td class="tariffs__data">
+                    <span class="tariffs__feature">Розовый фильтр</span>
+                  </td>
+                  <td class="tariffs__data tariffs__data--yes">
+                    <span class="visually-hidden">Да</span>
+                  </td>
+                  <td class="tariffs__data tariffs__data--yes">
+                    <span class="visually-hidden">Да</span>
+                  </td>
+                  <td class="tariffs__data tariffs__data--yes">
+                    <span class="visually-hidden">Да</span>
+                  </td>
+                </tr>
+                <tr class="tariffs__row tariffs__row--smile">
+                  <td class="tariffs__data">
+                    <span class="tariffs__feature">Смайлики</span>
+                  </td>
+                  <td class="tariffs__data tariffs__data--no">
+                    <span class="visually-hidden">Нет</span>
+                  </td>
+                  <td class="tariffs__data tariffs__data--yes">
+                    <span class="visually-hidden">Да</span>
+                  </td>
+                  <td class="tariffs__data tariffs__data--yes">
+                    <span class="visually-hidden">Да</span>
+                  </td>
+                </tr>
+                <tr class="tariffs__row tariffs__row--comments">
+                  <td class="tariffs__data">
+                    <span class="tariffs__feature">Комментарии</span>
+                  </td>
+                  <td class="tariffs__data tariffs__data--no">
+                    <span class="visually-hidden">Нет</span>
+                  </td>
+                  <td class="tariffs__data tariffs__data--no">
+                    <span class="visually-hidden">Нет</span>
+                  </td>
+                  <td class="tariffs__data tariffs__data--yes">
+                    <span class="visually-hidden">Да</span>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <ul class="slider__controls slider__controls--tariffs">
             <li>
               <button class="slider__control" type="button">
-                <span class="visually-hidden">База</span>
+                <span class="visually-hidden">Тариф «База»</span>
               </button>
             </li>
             <li>
-              <button class="slider__control slider__control--active" type="button">
-                <span class="visually-hidden">Стандарт</span>
+              <button class="slider__control slider__control--current" type="button">
+                <span class="visually-hidden">Тариф «Стандарт»</span>
               </button>
             </li>
             <li>
               <button class="slider__control" type="button">
-                <span class="visually-hidden">Анлим</span>
+                <span class="visually-hidden">Тариф «Анлим»</span>
               </button>
             </li>
           </ul>
@@ -271,15 +278,15 @@
       <section class="contacts">
         <h2 class="visually-hidden">Контакты</h2>
         <p class="contacts__slogan">Остались вопросы?</p>
-        <p class="contacts__slogan">Свяжитесь с нами!</p>
+        <p class="contacts__slogan contacts__slogan--mb">Свяжитесь с нами!</p>
         <ul class="contacts__list">
           <li class="contacts__item contacts__item--tel">
             <b class="contacts__name">Звоните:</b>
-            <a class="contacts__value" href="tel:+78125556666">+7 (812) 555-66-66</a>
+            <a class="contacts__value contacts__value--link" href="tel:+78125556666">+7 (812) 555-66-66</a>
           </li>
           <li class="contacts__item contacts__item--email">
             <b class="contacts__name">Пишите:</b>
-            <a class="contacts__value" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+            <a class="contacts__value contacts__value--link" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
           </li>
           <li class="contacts__item contacts__item--address">
             <b class="contacts__name">Приезжайте в гости:</b>
@@ -300,41 +307,45 @@
     </main>
 
     <footer class="page-footer page-footer--index">
-      <a class="page-footer__logo">
-        <svg class="page-footer__logo-image page-footer__logo-image--mobile" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
-          <use xlink:href="#for-s-logo-pink-blue-mobile" aria-hidden="true"></use>
-        </svg>
-        <svg class="page-footer__logo-image page-footer__logo-image--desktop" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
-          <use xlink:href="#for-s-logo-pink-blue-desktop" aria-hidden="true"></use>
-        </svg>
-      </a>
-      <ul class="page-footer__social-list social-list">
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--twitter" href="https://twitter.com">
-            <span class="visually-hidden" lang="en">Twitter</span>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com">
-            <span class="visually-hidden" lang="en">Facebook</span>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--youtube" href="https://www.youtube.com">
-            <span class="visually-hidden" lang="en">Youtube</span>
-          </a>
-        </li>
-      </ul>
-      <p class="page-footer__copyright copyright">
-        <b class="copyright__text">Разработано</b>
-        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="HTML Academy: переход на сайт">
-          <svg class="copyright__logo-image" width="27" height="34" role="img" focusable="false">
-            <use xlink:href="#for-s-logo-htmlacademy" aria-hidden="true"></use>
+      <div class="page-footer__wrapper">
+        <a class="page-footer__logo">
+          <svg class="page-footer__logo-image page-footer__logo-image--mobile" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
+            <use xlink:href="#for-s-logo-pink-blue-mobile" aria-hidden="true"></use>
+          </svg>
+          <svg class="page-footer__logo-image page-footer__logo-image--desktop" width="147" height="40" role="img" aria-label="Логотип мобильного приложения Пинк" focusable="false">
+            <use xlink:href="#for-s-logo-pink-blue-desktop" aria-hidden="true"></use>
           </svg>
         </a>
-      </p>
+        <ul class="page-footer__social-list social-list">
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--twitter" href="https://twitter.com">
+              <span class="visually-hidden" lang="en">Twitter</span>
+            </a>
+          </li>
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com">
+              <span class="visually-hidden" lang="en">Facebook</span>
+            </a>
+          </li>
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--youtube" href="https://www.youtube.com">
+              <span class="visually-hidden" lang="en">Youtube</span>
+            </a>
+          </li>
+        </ul>
+        <p class="page-footer__copyright copyright">
+          <b class="copyright__text">Разработано</b>
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="HTML Academy: переход на сайт">
+            <svg class="copyright__logo-image" width="27" height="34" role="img" focusable="false">
+              <use xlink:href="#for-s-logo-htmlacademy" aria-hidden="true"></use>
+            </svg>
+          </a>
+        </p>
+      </div>
     </footer>
 
     <script src="js/nav.min.js"></script>
+    <script src="js/map.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPChudeBDq6E5cWVAiQcCxzzbQm4o-93c&callback=initMap" async defer></script>
   </body>
 </html>

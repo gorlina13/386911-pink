@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Пинк — Конкурс</title>
     <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
@@ -59,29 +60,29 @@
       </div>
 
       <form class="contest-form" action="https://echo.htmlacademy.ru" method="post" aria-label="Форма для участия в конкурсе" aria-describedby="contest-form-description">
-        <p class="contest-form__description" id="contest-form-description">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="contest-form__addition">Пожалуйста, заполните форму ниже:</span></p>
+        <p class="contest-form__description" id="contest-form-description">Поделитесь своей историей и получите шанс выиграть ценный приз&nbsp;— 1000 миль на вашу&nbsp;бонусную&nbsp;карту! <span class="contest-form__addition contest-form__addition--tablet">Пожалуйста, заполните форму ниже:</span></p>
 
         <fieldset class="contest-form__group contest-form__group--name">
           <legend class="visually-hidden">ФИО</legend>
           <ul class="contest-form__list">
             <li class="contest-form__item contest-form__item--flex contest-form__item--name">
-              <input class="contest-form__text-input" type="text" name="last-name" id="last-name-field" placeholder="Укажите фамилию*" required>
-              <label class="contest-form__text-label" for="last-name-field">Фамилия:</label>
+              <input class="contest-form__text-input contest-form__text-input--name" type="text" name="last-name" id="last-name-field" placeholder="Укажите фамилию&nbsp;*" required>
+              <label class="contest-form__text-label contest-form__text-label--name" for="last-name-field">Фамилия:</label>
             </li>
             <li class="contest-form__item contest-form__item--flex contest-form__item--name">
-              <input class="contest-form__text-input" type="text" name="first-name" id="first-name-field" placeholder="Введите ваше имя*" required>
-              <label class="contest-form__text-label" for="first-name-field">Имя:</label>
+              <input class="contest-form__text-input contest-form__text-input--name" type="text" name="first-name" id="first-name-field" placeholder="Введите ваше имя&nbsp;*" required>
+              <label class="contest-form__text-label contest-form__text-label--name" for="first-name-field">Имя:</label>
             </li>
             <li class="contest-form__item contest-form__item--flex contest-form__item--name">
-              <input class="contest-form__text-input" type="text" name="patronymic" id="patronymic-field" placeholder="Ну и отчество тоже">
-              <label class="contest-form__text-label" for="patronymic-field">Отчество:</label>
+              <input class="contest-form__text-input contest-form__text-input--name" type="text" name="patronymic" id="patronymic-field" placeholder="Ну и отчество тоже">
+              <label class="contest-form__text-label contest-form__text-label--name" for="patronymic-field">Отчество:</label>
             </li>
           </ul>
         </fieldset>
 
         <fieldset class="contest-form__group contest-form__group--achievements">
-          <legend class="contest-form__subtitle">Ваши безбашенные достижения в путешествии</legend>
-          <ul class="contest-form__list contest-form__list--flex">
+          <legend class="contest-form__subtitle contest-form__subtitle--achievements">Ваши безбашенные достижения в&nbsp;путешествии</legend>
+          <ul class="contest-form__list contest-form__list--flex contest-form__list--flex-end">
             <li class="contest-form__item contest-form__item--achievements checkbox">
               <input class="checkbox__input visually-hidden" type="checkbox" name="shark" id="shark-field" value="shark" checked>
               <label class="checkbox__label" for="shark-field">Сделал селфи с акулой</label>
@@ -113,18 +114,18 @@
           <legend class="contest-form__subtitle contest-form__subtitle--contacts">Контактная информация</legend>
           <ul class="contest-form__list contest-form__list--flex">
             <li class="contest-form__item contest-form__item--flex contest-form__item--contacts">
-              <input class="contest-form__text-input" type="tel" name="tel" id="tel-field" placeholder="Номер, пожалуйста">
-              <label class="contest-form__text-label contest-form__text-label--tel" for="tel-field">Номер телефона</label>
+              <input class="contest-form__text-input contest-form__text-input--tel" type="tel" name="tel" id="tel-field" placeholder="Номер, пожалуйста">
+              <label class="contest-form__text-label contest-form__text-label--contacts" for="tel-field">Номер телефона</label>
             </li>
             <li class="contest-form__item contest-form__item--flex contest-form__item--contacts">
-              <input class="contest-form__text-input" type="email" name="email" id="email-field" placeholder="Введите почту*" required>
-              <label class="contest-form__text-label contest-form__text-label--email" for="email-field">Адрес почты</label>
+              <input class="contest-form__text-input contest-form__text-input--email" type="email" name="email" id="email-field" placeholder="Введите почту&nbsp;*" required>
+              <label class="contest-form__text-label contest-form__text-label--contacts" for="email-field">Адрес почты</label>
             </li>
           </ul>
         </fieldset>
 
         <fieldset class="contest-form__group contest-form__group--app">
-          <legend class="contest-form__subtitle">С каким приложением путешествовали?</legend>
+          <legend class="contest-form__subtitle contest-form__subtitle--app">С каким приложением путешествовали?</legend>
           <ul class="contest-form__list">
             <li class="contest-form__item contest-form__item--app radio">
               <input class="radio__input visually-hidden" type="radio" name="app" id="ios" value="ios" checked>
@@ -142,62 +143,64 @@
         </fieldset>
 
         <p class="contest-form__group contest-form__group--emotions">
-          <label class="contest-form__subtitle" for="emotions-field">Опишите свои эмоции</label>
+          <label class="contest-form__subtitle contest-form__subtitle--emotions" for="emotions-field">Опишите свои эмоции</label>
           <textarea class="contest-form__textarea" name="emotions" id="emotions-field" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
         </p>
 
         <div class="contest-form__bottom">
-          <span class="contest-form__footnote"><sup>*</sup> — обязательные <span class="contest-form__addition">для заполнения</span> поля</span>
+          <span class="contest-form__footnote"><sup class="contest-form__asterisk">*</sup>&nbsp;— обязательные <span class="contest-form__addition contest-form__addition--desktop">для заполнения</span> поля</span>
           <button class="contest-form__button button button--form button--submit" type="submit" aria-haspopup="dialog">Отправить форму</button>
         </div>
       </form>
     </main>
 
     <footer class="page-footer">
-      <a class="page-footer__logo" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
-        <svg class="page-footer__logo-image page-footer__logo-image--mobile" width="147" height="40" role="img" focusable="false">
-          <use xlink:href="#for-s-logo-pink-blue-mobile" aria-hidden="true"></use>
-        </svg>
-        <svg class="page-footer__logo-image page-footer__logo-image--desktop" width="147" height="40" role="img" focusable="false">
-          <use xlink:href="#for-s-logo-pink-blue-desktop" aria-hidden="true"></use>
-        </svg>
-      </a>
-      <ul class="page-footer__social-list social-list">
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--twitter" href="https://twitter.com">
-            <span class="visually-hidden" lang="en">Twitter</span>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com">
-            <span class="visually-hidden" lang="en">Facebook</span>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--youtube" href="https://www.youtube.com">
-            <span class="visually-hidden" lang="en">Youtube</span>
-          </a>
-        </li>
-      </ul>
-      <p class="page-footer__copyright copyright">
-        <b class="copyright__text">Разработано</b>
-        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="HTML Academy: переход на сайт">
-          <svg class="copyright__logo-image" width="27" height="34" role="img" focusable="false">
-            <use xlink:href="#for-s-logo-htmlacademy" aria-hidden="true"></use>
+      <div class="page-footer__wrapper">
+        <a class="page-footer__logo" href="index.html" aria-label="Мобильное приложение Пинк: на главную страницу">
+          <svg class="page-footer__logo-image page-footer__logo-image--mobile" width="147" height="40" role="img" focusable="false">
+            <use xlink:href="#for-s-logo-pink-blue-mobile" aria-hidden="true"></use>
+          </svg>
+          <svg class="page-footer__logo-image page-footer__logo-image--desktop" width="147" height="40" role="img" focusable="false">
+            <use xlink:href="#for-s-logo-pink-blue-desktop" aria-hidden="true"></use>
           </svg>
         </a>
-      </p>
+        <ul class="page-footer__social-list social-list">
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--twitter" href="https://twitter.com">
+              <span class="visually-hidden" lang="en">Twitter</span>
+            </a>
+          </li>
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com">
+              <span class="visually-hidden" lang="en">Facebook</span>
+            </a>
+          </li>
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--youtube" href="https://www.youtube.com">
+              <span class="visually-hidden" lang="en">Youtube</span>
+            </a>
+          </li>
+        </ul>
+        <p class="page-footer__copyright copyright">
+          <b class="copyright__text">Разработано</b>
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="HTML Academy: переход на сайт">
+            <svg class="copyright__logo-image" width="27" height="34" role="img" focusable="false">
+              <use xlink:href="#for-s-logo-htmlacademy" aria-hidden="true"></use>
+            </svg>
+          </a>
+        </p>
+      </div>
     </footer>
 
     <section class="modal modal--error" role="dialog" aria-labelledby="error-dialog-title">
-      <h2 class="modal__title modal__title--error" id="error-dialog-title">Что-то пошло не так!</h2>
+      <h2 class="modal__title modal__title--error" id="error-dialog-title">Что-то пошло не&nbsp;так!</h2>
       <p class="modal__description modal__description--error">Проверьте&nbsp;поля,&nbsp;выделенные красным, скорее&nbsp;всего&nbsp;вы&nbsp;забыли их&nbsp;заполнить</p>
       <button class="modal__button button button--form button--error" type="button">OK</button>
     </section>
 
     <section class="modal modal--success" role="dialog" aria-labelledby="success-dialog-title">
-      <h2 class="modal__title modal__title--success" id="success-dialog-title">Ваша заявка отправлена!</h2>
-      <p class="modal__description modal__description--success">Спасибо&nbsp;за&nbsp;ваше&nbsp;участие,&nbsp;ваша заявка уже&nbsp;поступила&nbsp;к&nbsp;нам.&nbsp;В ближайшее время&nbsp;мы рассмотрим ее&nbsp;и оповестим&nbsp;вас.</p>
+      <h2 class="modal__title modal__title--success" id="success-dialog-title">Ваша заявка отправлена</h2>
+      <p class="modal__description modal__description--success">Спасибо&nbsp;за&nbsp;ваше&nbsp;участие,&nbsp;ваша заявка уже поступила&nbsp;к&nbsp;нам.&nbsp;В ближайшее время&nbsp;мы рассмотрим ее&nbsp;и оповестим&nbsp;вас.</p>
       <button class="modal__button button button--form button--success" type="button">Закрыть окно</button>
     </section>
 
