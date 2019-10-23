@@ -1,0 +1,246 @@
+.tariffs {
+  padding-top: 5.0555em;
+  padding-bottom: 1.5em;
+
+  background-color: $second-bg-color;
+}
+
+.tariffs__table {
+  border-collapse: collapse;
+}
+
+.tariffs__row {
+  width: 100%;
+}
+
+.tariffs__head {
+  width: 25%;
+  padding: 0;
+
+  color: $body-bg-color;
+
+  background-color: $body-color;
+  border: 2px solid $border-color;
+  border-top: none;
+  border-bottom-color: $body-color;
+
+  &:last-of-type {
+    border-right-color: $body-color;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border-left-color: transparent;
+    border-right-color: $body-color;
+    border-bottom-color: $border-color;
+  }
+
+  &--hit {
+    background-image: linear-gradient(135deg, rgba($pink-color, 0) 1.1666em, $pink-color 1.1666em, $pink-color 2.7777em, rgba($pink-color, 0) 2.7777em, rgba($pink-color, 0) 100%);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% auto;
+  }
+}
+
+.tariffs__name {
+  display: block;
+  padding: 0.9444em 7.971% 0.1111em;
+
+  font-size: inherit;
+  line-height: 1.6666em;
+  text-transform: uppercase;
+
+  &--hit {
+    position: relative;
+  }
+}
+
+.tariffs__sticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-weight: 400;
+  font-size: 0.7777em;
+  line-height: 2.1429em;
+  text-transform: uppercase;
+
+  transform: translate(0.6428em, 0.8571em) rotate(-45deg);
+}
+
+.tariffs__price {
+  display: block;
+  padding: 0 7.971% 0.7916em;
+
+  font-weight: 300;
+  font-size: 1.3333em;
+  line-height: 1.25em;
+  text-transform: uppercase;
+}
+
+.tariffs__data {
+  width: 25%;
+  padding: 0;
+
+  font-size: 0.7777em;
+  line-height: 2.1428em;
+  text-transform: uppercase;
+  color: inherit;
+
+  background-color: $body-bg-color;
+  border: 2px solid $border-color;
+
+  &--yes,
+  &--no {
+    background-repeat: no-repeat;
+    background-position: 92.5% 50%;
+  }
+
+  &--yes {
+    background-image: url("../img/icon-yes.svg");
+    background-size: 2.2143em 1.5em;
+  }
+
+  &--no {
+    background-image: url("../img/icon-no.svg");
+    background-size: 1.9286em 1.8571em;
+  }
+
+  &--yes::before,
+  &--no::before {
+    display: block;
+    width: 75%;
+    padding: 1.0714em 7.971%;
+  }
+
+  .tariffs__row--filter &--yes::before,
+  .tariffs__row--filter &--no::before {
+    content: "Розовый фильтр";
+  }
+
+  .tariffs__row--smile &--yes::before,
+  .tariffs__row--smile &--no::before {
+    content: "Смайлики";
+  }
+
+  .tariffs__row--comments &--yes::before,
+  .tariffs__row--comments &--no::before {
+    content: "Комментарии";
+  }
+}
+
+.tariffs__feature {
+  display: block;
+  padding: 1.0714em 7.971%;
+}
+
+@media (min-width: $tablet-width) {
+  .tariffs {
+    padding: 4.9444em 1.1111em 3.7777em;
+  }
+
+  .tariffs__head--hit {
+    background-image: linear-gradient(135deg, rgba($pink-color, 0) 0.7777em, $pink-color 0.7777em, $pink-color 2.3333em, rgba($pink-color, 0) 2.3333em, rgba($pink-color, 0) 100%);
+  }
+
+  .tariffs__name {
+    padding: 0.875em 9.2715% 0;
+
+    font-size: 0.8888em;
+    line-height: 1.75em;
+  }
+
+  .tariffs__sticker {
+    font-size: 0.875em;
+
+    transform: translate(0.4285em, 0.2857em) rotate(-45deg);
+  }
+
+  .tariffs__price {
+    padding-bottom: 0.5em;
+    padding-left: 9.2715%;
+    padding-right: 9.2715%;
+
+    font-size: inherit;
+    line-height: 1.5555em;
+  }
+
+  .tariffs__data {
+    text-transform: none;
+
+    &--yes,
+    &--no {
+      background-position: 50% 48%;
+    }
+
+    &--yes::before,
+    &--no::before {
+      display: none;
+    }
+  }
+
+  .tariffs__feature {
+    padding: 0.5em 9.2715% 0.6428em;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .tariffs {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tariffs__table {
+    margin-top: 3.0555em;
+    margin-bottom: 1.5em;
+  }
+
+  .tariffs__head--hit {
+    background-image: linear-gradient(135deg, rgba($pink-color, 0) 1.2222em, $pink-color 1.2222em, $pink-color 2.8333em, rgba($pink-color, 0) 2.8333em, rgba($pink-color, 0) 100%);
+  }
+
+  .tariffs__name {
+    padding-top: 0.9444em;
+    padding-bottom: 0.1111em;
+
+    font-size: inherit;
+    line-height: 1.6666em;
+  }
+
+  .tariffs__sticker {
+    font-size: 0.7777em;
+
+    transform: translate(0.7143em, 0.8571em) rotate(-45deg);
+  }
+
+  .tariffs__price {
+    padding-bottom: 0.7916em;
+
+    font-size: 1.3333em;
+    line-height: 1.25em;
+  }
+
+  .tariffs__data {
+    font-size: inherit;
+    line-height: 1.6666em;
+
+    &--yes,
+    &--no {
+      background-position: 50% 54%;
+    }
+
+    &--yes {
+      background-size: 1.7222em 1.1666em;
+    }
+
+    &--no {
+      background-size: 1.5em 1.4444em;
+    }
+  }
+
+  .tariffs__feature {
+    padding-top: 0.8333em;
+    padding-bottom: 0.8333em;
+  }
+}
