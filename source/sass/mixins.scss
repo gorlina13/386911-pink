@@ -17,3 +17,112 @@
   transition-duration: 0.3s;
   transition-timing-function: ease;
 }
+
+@mixin app-logo-color() {
+  color: inherit;
+
+  &[href]:hover,
+  &:focus {
+    color: $pink-color;
+
+    @include hover-transition();
+  }
+
+  &[href]:active {
+    color: inherit;
+    opacity: 0.3;
+  }
+}
+
+@mixin slogan() {
+  padding: 0 0.8333em;
+
+  font-weight: 300;
+  font-size: 1.33333em;
+  line-height: 1.2em;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    max-width: 66.6666%;
+    padding: 0 0.5em;
+
+    font-size: 2.2222em;
+
+    &--wide {
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 12em;
+    padding: 0 0.2em;
+
+    font-size: 2.7777em;
+
+    &--wide {
+      max-width: 16.4em;
+    }
+  }
+}
+
+@mixin bg-triangle-white($z-index: 0) {
+  position: relative;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    @if $z-index != 0 { /* stylelint-disable-line */
+      z-index: $z-index;
+    }
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    height: 0;
+    padding-bottom: 7.8333%;
+
+    background-image: linear-gradient(-4deg, rgba($body-bg-color, 0) 50%, $body-bg-color 50%);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% auto;
+
+    transform: translateY(-1px);
+  }
+
+  @supports (clip-path: polygon(0% 0%, 100% 0%, 0% 100%)) {
+    &::after {
+      background: none;
+      background-color: $body-bg-color;
+      clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    }
+  }
+}
+
+@mixin text-field() {
+  font-size: inherit;
+  line-height: 1.6666em;
+  color: inherit;
+
+  background-color: transparent;
+  border: 2px solid $border-color;
+  border-radius: 2%;
+
+  &::placeholder {
+    color: inherit;
+    opacity: 1;
+  }
+
+  &:hover {
+    border-color: $body-color;
+
+    @include hover-transition();
+  }
+
+  &:focus {
+    outline-color: $pink-color;
+    border-color: $pink-color;
+  }
+}
