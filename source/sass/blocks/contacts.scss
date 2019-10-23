@@ -1,0 +1,170 @@
+.contacts {
+  padding-top: 2.3888em;
+}
+
+.contacts__slogan {
+  margin: 0;
+
+  @include slogan();
+
+  &--mb {
+    margin-bottom: 1.5416em;
+  }
+}
+
+.contacts__list {
+  margin: 0;
+  padding: 0 1.1111em 0.8333em;
+
+  @include fix-list();
+}
+
+.contacts__item {
+  margin-bottom: 1.2777em;
+
+  &--email {
+    margin-bottom: 1.3888em;
+  }
+}
+
+.contacts__name {
+  display: block;
+  padding-bottom: 0.3333em;
+
+  font-weight: 700;
+  line-height: 1.2em;
+  text-align: center;
+
+  .contacts__item--tel & {
+    padding-bottom: 0.1667em;
+  }
+}
+
+.contacts__value {
+  display: block;
+
+  font-weight: 300;
+  font-size: 1.33333em;
+  line-height: 1.2em;
+  text-align: center;
+  text-decoration: none;
+  color: $pink-color;
+
+  &--link {
+    cursor: pointer;
+  }
+
+  &--link:hover,
+  &--link:focus {
+    color: inherit;
+
+    @include hover-transition();
+  }
+
+  &--link:active {
+    opacity: 0.3;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .contacts {
+    padding-top: 2.5555em;
+  }
+
+  .contacts__slogan {
+    margin-left: auto;
+    margin-right: auto;
+
+    &--mb {
+      margin-bottom: 1.175em;
+    }
+  }
+
+  .contacts__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 0 0.5555em;
+  }
+
+  .contacts__item {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 50%;
+    margin-bottom: 2.6111em;
+    padding: 0 0.5555em;
+
+    &--email {
+      margin-bottom: 2.6111em;
+    }
+
+    &--address {
+      margin-bottom: 1.6111em;
+    }
+  }
+
+  .contacts__name {
+    padding: 0 10% 0.4444em;
+
+    .contacts__item--tel & {
+      padding-bottom: 0.3333em;
+    }
+  }
+
+  .contacts__value {
+    padding: 0 5%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .contacts {
+    padding-top: 3.6666em;
+  }
+
+  .contacts__list {
+    max-width: 53.3333em;
+    margin: 0 auto;
+    padding-bottom: 1.2777em;
+  }
+
+  .contacts__item {
+    width: 33.3333%;
+    margin-bottom: 0;
+
+    &--email {
+      order: 3;
+    }
+
+    &--address {
+      order: 2;
+    }
+  }
+
+  .contacts__name {
+    padding: 0 6% 1.3888em;
+
+    .contacts__item--tel & {
+      padding-bottom: 1.3888em;
+      padding-right: 10%;
+    }
+
+    .contacts__item--email & {
+      padding-bottom: 1.5em;
+      padding-left: 10%;
+    }
+  }
+
+  .contacts__value {
+    padding: 0 2%;
+
+    .contacts__item--tel & {
+      padding-right: 6%;
+    }
+
+    .contacts__item--email & {
+      padding-left: 6%;
+    }
+  }
+}
