@@ -1,0 +1,105 @@
+.advantage__title {
+  margin: 0;
+  margin-bottom: 0.4444em;
+
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: center;
+  color: #000000;
+}
+
+.advantage__description {
+  margin: 0;
+
+  font-size: 0.7778em;
+  line-height: 1.7143em;
+  text-align: center;
+}
+
+@media (min-width: $tablet-width) {
+  .advantage {
+    width: 50%;
+  }
+
+  .advantage__title {
+    text-align: left;
+  }
+
+  .advantage__description {
+    text-align: left;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .advantage {
+    width: 31.25%;
+  }
+
+  .advantage__title {
+    margin-bottom: 0.8333em;
+    padding: 0 11%;
+
+    font-size: 1.6666em;
+    line-height: 1.0333em;
+    text-align: center;
+
+    &::before {
+      content: "";
+
+      display: block;
+      min-height: 10.2666em;
+      margin-bottom: 1.8333em;
+
+      background-repeat: no-repeat;
+      background-position: 45% 100%;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-size: 9.73333em auto;
+      }
+    }
+
+    .advantage:nth-child(1) &::before {
+      background-position: 50% 100%;
+      background-image: url("../img/iphone-screen-1-desktop@1x.png");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/iphone-screen-1-desktop@2x.png");
+      }
+    }
+
+    .advantage:nth-child(2) &::before {
+      background-image: url("../img/iphone-screen-2-desktop@1x.png");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/iphone-screen-2-desktop@2x.png");
+      }
+    }
+
+    .advantage:nth-child(3) &::before {
+      background-image: url("../img/iphone-screen-3-desktop@1x.png");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/iphone-screen-3-desktop@2x.png");
+      }
+    }
+  }
+
+  .advantage__description {
+    padding: 0 7%;
+
+    font-size: 1em;
+    line-height: 1.6667em;
+    text-align: center;
+
+    .advantage:nth-child(3) & {
+      padding: 0 10%;
+    }
+  }
+
+  @supports (display: grid) {
+    .advantage {
+      width: auto;
+    }
+  }
+}

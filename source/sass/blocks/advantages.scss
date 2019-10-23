@@ -1,0 +1,151 @@
+.advantages {
+  background-color: $second-bg-color;
+}
+
+.advantages__top {
+  padding-top: 2.2777em;
+  padding-bottom: 0.3888em;
+
+  background-color: $body-bg-color;
+
+  @include bg-triangle-white();
+}
+
+.advantages__slogan {
+  margin: 0;
+  margin-bottom: 1.2916em;
+
+  @include slogan();
+}
+
+.advantages__list {
+  margin: 0;
+  padding: 4em 1.1111em 0;
+
+  @include fix-list();
+
+  &::after {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+    min-height: 16.1666em;
+
+    background-image: url("../img/iphone-screen-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 0.7777em;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/iphone-screen-mobile@2x.png");
+      background-size: 8.7222em auto;
+    }
+  }
+}
+
+.advantages__item {
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: $tablet-width) {
+  .advantages__top {
+    padding: 2.7777em 0;
+  }
+
+  .advantages__slogan {
+    margin: 0 auto;
+  }
+
+  .advantages__list {
+    position: relative;
+
+    min-height: 26.9444em;
+    padding-top: 3.8333em;
+
+    border-bottom: 1px solid transparent;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+
+      width: 50%;
+
+      background-image: url("../img/iphone-screen-3-tablet@1x.png");
+      background-position: 1.1111em 100%;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/iphone-screen-3-tablet@2x.png");
+        background-size: 14.8888em auto;
+      }
+    }
+  }
+
+  .advantages__item {
+    margin-bottom: 1.6666em;
+    margin-left: 50%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .advantages__top {
+    padding: 3.8333em 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      top: 100%;
+      left: 0;
+      right: 0;
+
+      height: 1.1111em;
+
+      background-color: $body-bg-color;
+    }
+
+    &::after {
+      margin-top: 1.1111em;
+    }
+  }
+
+  .advantages__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    max-width: 53.3333em;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 0.1111em;
+    border-bottom: none;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .advantages__item {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    margin: 0 1.0416% 3.3333em;
+  }
+
+  @supports (display: grid) {
+    .advantages__list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-column-gap: 0.5555em;
+      grid-row-gap: 3.3333em;
+
+      padding-left: 0.5555em;
+      padding-right: 0.5555em;
+      padding-bottom: 3.3333em;
+    }
+
+    .advantages__item {
+      margin: 0;
+    }
+  }
+}
