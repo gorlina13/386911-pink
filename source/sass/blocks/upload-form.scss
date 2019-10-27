@@ -1,0 +1,380 @@
+.upload-form {
+  padding-top: 1.1111em;
+
+  background-color: $second-bg-color;
+}
+
+.upload-form__photo {
+  padding: 0 1.1111em 1.1111em;
+}
+
+.upload-form__image {
+  display: block;
+  width: 100%;
+}
+
+.upload-form__tool-list {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0.7222em 12.5% 3.7777em;
+
+  @include fix-list();
+
+  border-bottom: 1px solid rgba($body-color, 0.1);
+}
+
+.upload-form__tool-item {
+  flex-shrink: 0;
+  flex-basis: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 33.3333%;
+}
+
+.upload-form__filter {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 3.3333em;
+  height: 3.3333em;
+  padding: 0.3333em;
+
+  color: inherit;
+
+  background-color: transparent;
+  border: none;
+
+  opacity: 0.3;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+
+  &:active,
+  &--active {
+    color: $pink-color;
+    opacity: 1;
+  }
+}
+
+.upload-form__icon {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  display: block;
+
+  fill: currentColor;
+
+  &--crop {
+    width: 2.6666em;
+    height: 2.6666em;
+  }
+
+  &--fill {
+    width: 2.8888em;
+    height: 2.6666em;
+    margin-top: 0.1111em;
+  }
+
+  &--contrast {
+    width: 1.7777em;
+    height: 1.7777em;
+  }
+}
+
+.upload-form__scale {
+  position: absolute;
+  bottom: 0;
+  left: 12.5%;
+  right: 12.5%;
+
+  height: 2.3333em;
+
+  display: none;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0.3333em;
+    left: 0;
+    right: 0;
+
+    height: 0.1111em;
+    background-color: $body-color;
+  }
+
+  .upload-form__filter--active + & {
+    display: block;
+  }
+}
+
+.upload-form__control {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 0.7777em;
+  height: 0.7777em;
+  padding: 0;
+
+  background-color: $second-bg-color;
+  border: 2px solid $pink-color;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  &--crop {
+    left: 80.4166%;
+  }
+
+  &:focus,
+  &:active {
+    background-color: $pink-color;
+  }
+}
+
+.upload-form__buttons {
+  margin: 0;
+  padding: 2.2777em 1.1111em;
+  padding-top: 2.1111em;
+
+  @include fix-list();
+}
+
+.upload-form__submit {
+  margin-bottom: 0.6666em;
+}
+
+@media (min-width: $tablet-width) {
+  .upload-form {
+    display: flex;
+
+    padding: 2.2222em 0 3em;
+  }
+
+  .upload-form__photo {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 50%;
+    padding-top: 0.9444em;
+    padding-bottom: 0;
+    padding-right: 0.5555em;
+  }
+
+  .upload-form__processing {
+    flex-shrink: 0;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+    padding-left: 0.5555em;
+    padding-right: 1.1111em;
+  }
+
+  .upload-form__tool-list {
+    position: static;
+
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    display: block;
+
+    padding-left: 8.3333%;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 1.5em;
+
+    border: none;
+  }
+
+  .upload-form__tool-item {
+    justify-content: flex-start;
+
+    width: 100%;
+    padding-right: 6.5455%;
+
+    border-bottom: 1px solid rgba($body-color, 0.1);
+  }
+
+  .upload-form__filter {
+    justify-content: flex-start;
+
+    width: 2.5em;
+    max-width: 18%;
+    height: 4em;
+    margin-right: auto;
+    padding: 0;
+
+    color: $pink-color;
+
+    opacity: 1;
+  }
+
+  .upload-form__icon {
+    &--crop {
+      width: 1.2222em;
+      height: 1.2222em;
+      margin-left: 0.1666em;
+    }
+
+    &--fill {
+      width: 1.4444em;
+      height: 1.3333em;
+      margin-left: 0.1666em;
+      margin-top: 0.2222em;
+    }
+
+    &--contrast {
+      width: 0.8888em;
+      height: 0.8888em;
+      margin-left: 0.4444em;
+      margin-bottom: 0.1111em;
+    }
+  }
+
+  .upload-form__scale {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    display: block;
+    width: 78.5992%;
+    height: 0.8888em;
+  }
+
+  .upload-form__control {
+    &--crop {
+      left: 72.2772%;
+    }
+
+    &--fill {
+      left: 12.3762%;
+    }
+
+    &--contrast {
+      left: 47.5248%;
+    }
+  }
+
+  .upload-form__buttons {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    margin-top: auto;
+    padding: 0;
+    padding-left: 9%;
+    padding-right: 4.3333%;
+  }
+
+  .upload-form__submit {
+    margin-bottom: 1.3333em;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .upload-form {
+    padding-bottom: 3.1666em;
+  }
+
+  .upload-form__photo {
+    padding-left: 8.5106%;
+    padding-right: 9.5744%;
+  }
+
+  .upload-form__processing {
+    padding-left: 0;
+    padding-right: 6.3829%;
+  }
+
+  .upload-form__tool-list {
+    padding-left: 0;
+    padding-bottom: 3em;
+  }
+
+  .upload-form__tool-item {
+    padding-right: 7.317%;
+  }
+
+  .upload-form__filter {
+    width: 3.3333em;
+    max-width: 16%;
+  }
+
+  .upload-form__icon {
+    margin: 0;
+
+    &--crop {
+      width: 2.6666em;
+      height: 2.6666em;
+    }
+
+    &--fill {
+      width: 2.8888em;
+      height: 2.6666em;
+      margin-top: 0.3333em;
+    }
+
+    &--contrast {
+      width: 1.7777em;
+      height: 1.7777em;
+      margin-left: 0.3333em;
+    }
+  }
+
+  .upload-form__scale {
+    width: 75.7894%;
+  }
+
+  .upload-form__control {
+    &--crop {
+      left: 24.6527%;
+    }
+
+    &--fill {
+      left: 86.1111%;
+    }
+
+    &--contrast {
+      left: 55.5555%;
+    }
+  }
+
+  .upload-form__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    & li {
+      flex-shrink: 0;
+      flex-basis: auto;
+
+      width: 44.6341%;
+    }
+  }
+
+  .upload-form__submit {
+    margin-bottom: 0;
+  }
+}

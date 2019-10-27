@@ -1,0 +1,41 @@
+.upload__description {
+  margin: 0;
+  padding: 0 1.4286em;
+  padding-top: 1.6429em;
+  padding-bottom: 3em;
+
+  font-size: 0.7778em;
+  line-height: 2.1429em;
+  text-align: center;
+}
+
+.upload__first-call {
+  display: block;
+}
+
+@media (min-width: $tablet-width) {
+  .upload__description {
+    max-width: 77.2727%;
+    margin: 0 auto;
+    padding: 2.5em 1.1111em 3.8333em;
+
+    font-size: inherit;
+    line-height: 1.6667em;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .upload {
+    max-width: 53.3333em;
+    margin: 0 auto;
+    margin-bottom: 1.5555em;
+    padding: 0 0.5555em;
+  }
+
+  .upload__description {
+    max-width: 35em;
+    padding: 0;
+    padding-top: 0.2777em;
+    padding-bottom: 3.6666em;
+  }
+}
