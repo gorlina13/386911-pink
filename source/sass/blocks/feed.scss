@@ -1,0 +1,87 @@
+.feed__description {
+  margin: 0;
+  padding: 3.2143em 1.4286em;
+  padding-bottom: 3.5em;
+
+  font-size: 0.7778em;
+  line-height: 2.1429em;
+  text-align: center;
+}
+
+.feed__panorama {
+  margin-bottom: 1.1111em;
+}
+
+.feed__list {
+  margin: 0;
+  padding: 0 1.1111em;
+
+  @include fix-list();
+}
+
+.feed__item {
+  margin-bottom: 1.1111em;
+}
+
+@media (min-width: $tablet-width) {
+  .feed {
+    padding-top: 1.8888em;
+  }
+
+  .feed__description {
+    max-width: 77.2727%;
+    margin: 0 auto;
+    margin-bottom: 0.7222em;
+    padding-left: 1.1111em;
+    padding-right: 1.1111em;
+
+    font-size: inherit;
+    line-height: 1.6667em;
+  }
+
+  .feed__panorama {
+    margin-bottom: 2.7777em;
+  }
+
+  .feed__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-left: 0.5555em;
+    padding-right: 0.5555em;
+  }
+
+  .feed__item {
+    flex-shrink: 0;
+    flex-basis: auto;
+    display: flex;
+
+    width: 50%;
+    padding-left: 0.5555em;
+    padding-right: 0.5555em;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .feed__description {
+    max-width: 35em;
+    margin-bottom: 1.3888em;
+    padding-left: 0.5555em;
+    padding-right: 0.5555em;
+  }
+
+  .feed__panorama {
+    margin-bottom: 2.7222em;
+  }
+
+  .feed__list {
+    max-width: 53.3333em;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .feed__item {
+    width: 33.3333%;
+    margin-bottom: 3em;
+  }
+}

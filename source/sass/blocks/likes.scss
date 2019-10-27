@@ -1,0 +1,86 @@
+.likes {
+  display: flex;
+
+  padding-left: 0.5em;
+  padding-right: 1.5em;
+  padding-bottom: 0.8333em;
+
+  font-size: 0.6667em;
+  line-height: 2em;
+  text-transform: uppercase;
+  color: $pink-color;
+}
+
+.likes__button {
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-self: center;
+
+  display: block;
+  width: 3.0833em;
+  height: 3.0833em;
+  margin-right: 0.5833em;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/icon-heart.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 1.0833em 1em;
+
+  cursor: pointer;
+}
+
+.likes__text {
+  flex-shrink: 0;
+  flex-basis: auto;
+  flex-grow: 1;
+
+  width: 50%;
+  margin: 0;
+  padding: 0.8333em 0;
+}
+
+@media (min-width: $tablet-width) {
+  .likes {
+    padding-left: 2.25em;
+    padding-right: 1.6666em;
+    padding-bottom: 1.8333em;
+
+    .photo__panorama-wrapper & {
+      width: 50%;
+      padding-right: 1.4166em;
+      padding-bottom: 0;
+    }
+  }
+
+  .likes__button {
+    order: 2;
+    align-self: flex-end;
+
+    margin-right: 0;
+
+    background-position: 50% 70%;
+  }
+
+  .likes__text {
+    padding-right: 0.5em;
+    padding-top: 1.0833em;
+    padding-bottom: 0;
+
+    .photo__panorama-wrapper & {
+      padding-top: 2.0833em;
+
+      text-align: right;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .likes {
+    .photo__panorama-wrapper & {
+      padding-right: 1.6666em;
+    }
+  }
+}

@@ -1,0 +1,205 @@
+.photo {
+  display: flex;
+  flex-direction: column;
+
+  background-color: $second-bg-color;
+
+  &--panorama {
+    position: relative;
+
+    background-color: transparent;
+  }
+}
+
+.photo__panorama-wrapper {
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-self: center;
+
+  max-width: calc(100% - 2.2222em);
+  margin: 0 1.1111em;
+
+  background-color: $second-bg-color;
+}
+
+.photo__user {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  margin: 0;
+  margin-bottom: -0.1111em;
+  padding: 0.6666em 1em 0;
+
+  font-size: inherit;
+}
+
+.photo__name {
+  font-weight: 700;
+  font-size: 0.7778em;
+  line-height: 1.7143em;
+}
+
+.photo__time {
+  font-weight: 300;
+  font-size: 0.6667em;
+  line-height: 2em;
+  text-transform: uppercase;
+}
+
+.photo__description {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  margin: 0;
+  padding: 0 1.2857em;
+
+  font-size: 0.7778em;
+  line-height: 1.7143em;
+}
+
+.photo__category {
+  position: absolute;
+  top: 0;
+  right: 1.6666em;
+
+  width: 11.6666em;
+  padding: 0.5em;
+
+  font-weight: 700;
+  font-size: 0.6667em;
+  line-height: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $body-bg-color;
+
+  background-color: $pink-color;
+}
+
+.photo__likes {
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.photo__link {
+  flex-shrink: 0;
+  flex-basis: auto;
+  order: -1;
+
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+.photo__image {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .photo {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 100%;
+  }
+
+  .photo__panorama-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-bottom: 1.3333em;
+  }
+
+  .photo__user {
+    padding: 1em 1.5em 0;
+
+    .photo__panorama-wrapper & {
+      width: 50%;
+    }
+  }
+
+  .photo__description {
+    min-height: 3.4286em;
+    padding-left: 1.9286em;
+    padding-right: 1.9286em;
+
+    .photo__panorama-wrapper & {
+      order: 3;
+
+      width: 100%;
+    }
+  }
+
+  .photo__category {
+    top: 4.75em;
+  }
+
+  .photo__likes {
+    margin-top: auto;
+
+    .photo__panorama-wrapper & {
+      order: 2;
+
+      margin-top: 0;
+    }
+  }
+
+  .photo__link {
+    .photo--panorama & {
+      overflow: hidden;
+    }
+  }
+
+  .photo__image {
+    .photo--panorama & {
+      width: 106.0606%;
+      max-width: none;
+      margin-right: -3.0303%;
+      margin-left: -3.0303%;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .photo {
+    &--panorama {
+      position: static;
+    }
+  }
+
+  .photo__panorama-wrapper {
+    position: relative;
+
+    max-width: 52.2222em;
+    margin: 0 0.5555em;
+    padding-bottom: 0;
+  }
+
+  .photo__category {
+    z-index: 5;
+    right: 0;
+    top: -37.6666em;
+  }
+
+  .photo__link {
+    .photo--panorama & {
+      position: relative;
+
+      height: 28.1111em;
+    }
+  }
+
+  .photo__image {
+    .photo--panorama & {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      width: auto;
+      margin: 0;
+
+      transform: translate(-50%, -50%);
+    }
+  }
+}
