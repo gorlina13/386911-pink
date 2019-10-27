@@ -1,6 +1,7 @@
 .button {
   display: block;
 
+  font-size: inherit;
   font-weight: 700;
   text-align: center;
   text-decoration: none;
@@ -49,6 +50,8 @@
   &--cancel {
     width: 100%;
     padding: 0.3888em 0.5em 0.5555em;
+
+    line-height: inherit;
 
     background-color: transparent;
     border-radius: 1.6666em;
@@ -127,11 +130,6 @@
 
       font-size: 1.1666em;
       line-height: 1.5238em;
-    }
-
-    &--upload,
-    &--cancel {
-      width: 44.6341%;
     }
 
     &--submit {
