@@ -94,7 +94,7 @@
   }
 }
 
-.upload-form__scale {
+.upload-form__range {
   position: absolute;
   bottom: 0;
   left: 12.5%;
@@ -121,7 +121,7 @@
   }
 }
 
-.upload-form__control {
+.upload-form__thumb {
   position: absolute;
   top: 0;
   left: 0;
@@ -247,7 +247,7 @@
     }
   }
 
-  .upload-form__scale {
+  .upload-form__range {
     position: relative;
     bottom: auto;
     left: auto;
@@ -261,7 +261,7 @@
     height: 0.8888em;
   }
 
-  .upload-form__control {
+  .upload-form__thumb {
     &--crop {
       left: 72.2772%;
     }
@@ -340,11 +340,11 @@
     }
   }
 
-  .upload-form__scale {
+  .upload-form__range {
     width: 75.7894%;
   }
 
-  .upload-form__control {
+  .upload-form__thumb {
     &--crop {
       left: 24.6527%;
     }
