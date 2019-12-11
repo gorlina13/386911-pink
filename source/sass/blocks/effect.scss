@@ -91,6 +91,7 @@
   .effect__link {
     flex-shrink: 0;
     flex-basis: auto;
+    align-self: flex-start;
 
     display: block;
     max-width: 100%;
