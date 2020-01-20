@@ -1,48 +1,48 @@
 'use strict';
 
 (function () {
-  function findElements() {
-    var nav = document.querySelector('.main-nav');
-    var navToggle = nav.querySelector('.main-nav__toggle');
+  class MainNav {
+    constructor(nav, navToggle) {
+      this.nav = nav;
+      this.navToggle = navToggle;
+    }
 
-    if (nav !== null && navToggle !== null) {
-      var mainNav = new MainNav(nav, navToggle);
-      mainNav.run();
+    open() {
+      this.nav.classList.remove(`main-nav--closed`);
+      this.nav.classList.add(`main-nav--opened`);
+      this.navToggle.setAttribute(`aria-expanded`, true);
+    }
+
+    close() {
+      this.nav.classList.remove(`main-nav--opened`);
+      this.nav.classList.add(`main-nav--closed`);
+      this.navToggle.setAttribute(`aria-expanded`, false);
+    }
+
+    setup() {
+      let onNavToggleClick = () => {
+        if (this.nav.classList.contains(`main-nav--closed`)) {
+          this.open();
+        } else {
+          this.close();
+        }
+      };
+
+      this.nav.classList.remove(`main-nav--nojs`);
+      this.close();
+      this.navToggle.addEventListener(`click`, onNavToggleClick);
     }
   }
 
-  function MainNav(nav, navToggle) {
-    this.nav = nav;
-    this.navToggle = navToggle;
+  function makeNav() {
+    let nav = document.querySelector(`.main-nav`);
+    let navToggle = document.querySelector(`.main-nav__toggle`);
+
+    if (nav && navToggle) {
+      let mainNav = new MainNav(nav, navToggle);
+      mainNav.setup();
+    }
   }
 
-  MainNav.prototype.open = function () {
-    this.nav.classList.remove('main-nav--closed');
-    this.nav.classList.add('main-nav--opened');
-    this.navToggle.setAttribute('aria-expanded', true);
-  };
-
-  MainNav.prototype.close = function () {
-    this.nav.classList.remove('main-nav--opened');
-    this.nav.classList.add('main-nav--closed');
-    this.navToggle.setAttribute('aria-expanded', false);
-  };
-
-  MainNav.prototype.run = function () {
-    var self = this;
-
-    function onNavToggleClick() {
-      if (self.nav.classList.contains('main-nav--closed')) {
-        self.open();
-      } else {
-        self.close();
-      }
-    }
-
-    this.nav.classList.remove('main-nav--nojs');
-    this.close();
-    this.navToggle.addEventListener('click', onNavToggleClick);
-  };
-
-  findElements();
+  makeNav();
 })();

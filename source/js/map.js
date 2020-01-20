@@ -1,58 +1,63 @@
-/* eslint-disable */
 'use strict';
 
-function initMap() {
-  var LAT_LNG = {
-    lat: 59.938549,
-    lng: 30.322993
-  };
-
-  var mapArea = document.querySelector('.map__interactive');
-
-  function getMapOptions() {
-    var ZOOM = 17;
-    var SCROLLWHEEL = false;
-
-    return {
-      zoom: ZOOM,
-      center: LAT_LNG,
-      scrollwheel: SCROLLWHEEL
-    }
-  }
-
-  function getMarkerOptions(map) {
-    var TITLE = 'Пинк';
-
-    var PIN = {
-      url: 'img/icon-map-marker.svg',
-      width: 36,
-      height: 36,
-      originX: 0,
-      originY: 0,
-      anchorX: 18,
-      anchorY: 18
-    }
-
-    var icon = {
-      url: PIN.url,
-      size: new google.maps.Size(PIN.width, PIN.height),
-      origin: new google.maps.Point(PIN.originX, PIN.originY),
-      anchor: new google.maps.Point(PIN.anchorX, PIN.anchorY),
-      scaledSize: new google.maps.Size(PIN.width, PIN.height)
+(function () {
+  function initMap() {
+    const LAT_LNG = {
+      lat: 59.938549,
+      lng: 30.322993
     };
 
-    return {
-      position: LAT_LNG,
-      map: map,
-      title: TITLE,
-      icon: icon
+    let mapArea = document.querySelector(`.map__interactive`);
+
+    function getMapOptions() {
+      const zoom = 17;
+      const scrollwheel = false;
+
+      return {
+        zoom,
+        center: LAT_LNG,
+        scrollwheel
+      };
+    }
+
+    function getMarkerOptions(map) {
+      const TITLE = `Пинк`;
+
+      const pinData = {
+        url: `img/icon-map-marker.svg`,
+        width: 36,
+        height: 36,
+        originX: 0,
+        originY: 0,
+        anchorX: 18,
+        anchorY: 18
+      };
+
+      const {url, width, height, originX, originY, anchorX, anchorY} = pinData;
+
+      const icon = {
+        url,
+        size: new google.maps.Size(width, height), /* eslint-disable-line */
+        origin: new google.maps.Point(originX, originY), /* eslint-disable-line */
+        anchor: new google.maps.Point(anchorX, anchorY), /* eslint-disable-line */
+        scaledSize: new google.maps.Size(width, height) /* eslint-disable-line */
+      };
+
+      return {
+        position: LAT_LNG,
+        map,
+        TITLE,
+        icon
+      };
+    }
+
+    if (mapArea) {
+      mapArea.classList.remove(`map__interactive--hidden`);
+      let map = new google.maps.Map(mapArea, getMapOptions()); /* eslint-disable-line */
+
+      let marker = new google.maps.Marker(getMarkerOptions(map)); /* eslint-disable-line */
     }
   }
 
-  if (mapArea !== null) {
-    mapArea.classList.remove('map__interactive--hidden');
-    var map = new google.maps.Map(mapArea, getMapOptions());
-
-    var marker = new google.maps.Marker(getMarkerOptions(map));
-  }
-}
+  window.initMap = initMap;
+})();
