@@ -19,6 +19,7 @@ var uglify = require("gulp-uglify");
 var pipeline = require("readable-stream").pipeline;
 var sourcemaps = require("gulp-sourcemaps");
 var gulpIf = require("gulp-if");
+var babel = require("gulp-babel");
 
 var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 
@@ -87,6 +88,18 @@ function js() {
   return pipeline(
     gulp.src("source/js/**/*.js"),
     gulpIf(isDevelopment, sourcemaps.init()),
+    babel({
+      sourceType: "script",
+      presets: [
+        [
+          "@babel/preset-env",
+          {
+            modules: false,
+            targets: ["last 2 versions", "IE 11", "Firefox ESR"]
+          }
+        ]
+      ]
+    }),
     uglify(),
     rename(function (path) {
       path.basename += ".min";
