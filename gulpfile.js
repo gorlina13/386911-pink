@@ -1,27 +1,76 @@
 "use strict";
 
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var plumber = require("gulp-plumber");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var server = require("browser-sync").create();
-var csso = require("gulp-csso");
-var rename = require("gulp-rename");
-var del = require("del");
-var imagemin = require("gulp-imagemin");
-var webp = require("gulp-webp");
-var svgstore = require("gulp-svgstore");
-var posthtml = require("gulp-posthtml");
-var include = require("posthtml-include");
-var htmlmin = require("gulp-htmlmin");
-var uglify = require("gulp-uglify");
-var pipeline = require("readable-stream").pipeline;
-var sourcemaps = require("gulp-sourcemaps");
-var gulpIf = require("gulp-if");
-var babel = require("gulp-babel");
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const plumber = require("gulp-plumber");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const server = require("browser-sync").create();
+const csso = require("gulp-csso");
+const rename = require("gulp-rename");
+const del = require("del");
+const imagemin = require("gulp-imagemin");
+const webp = require("gulp-webp");
+const svgstore = require("gulp-svgstore");
+const posthtml = require("gulp-posthtml");
+const include = require("posthtml-include");
+const htmlmin = require("gulp-htmlmin");
+const pipeline = require("readable-stream").pipeline;
+const gulpIf = require("gulp-if");
+const webpack = require("webpack-stream");
 
-var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
+
+const devWebpackOptions = {
+  mode: 'development',
+  output: {
+    filename: 'bundle.js'
+  },
+  watch: false,
+  devtool: "source-map",
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [['@babel/preset-env', {
+                debug: true,
+                corejs: 3,
+                useBuiltIns: "usage"
+            }]]
+          }
+        }
+      }
+    ]
+  }
+};
+
+const prodWebpackOptions = {
+  mode: 'production',
+  output: {
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [['@babel/preset-env', {
+                corejs: 3,
+                useBuiltIns: "usage"
+            }]]
+          }
+        }
+      }
+    ]
+  }
+};
 
 function style() {
   return gulp.src("source/sass/style.scss")
@@ -86,25 +135,8 @@ function html() {
 
 function js() {
   return pipeline(
-    gulp.src("source/js/**/*.js"),
-    gulpIf(isDevelopment, sourcemaps.init()),
-    babel({
-      sourceType: "script",
-      presets: [
-        [
-          "@babel/preset-env",
-          {
-            modules: false,
-            targets: ["last 2 versions", "IE 11", "Firefox ESR"]
-          }
-        ]
-      ]
-    }),
-    uglify(),
-    rename(function (path) {
-      path.basename += ".min";
-    }),
-    gulpIf(isDevelopment, sourcemaps.write()),
+    gulp.src("source/js/main.js"),
+    gulpIf(isDevelopment, webpack(devWebpackOptions), webpack(prodWebpackOptions)),
     gulp.dest("build/js")
   );
 }
