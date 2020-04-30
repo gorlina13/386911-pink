@@ -22,9 +22,9 @@ const webpack = require("webpack-stream");
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 
 const devWebpackOptions = {
-  mode: 'development',
+  mode: "development",
   output: {
-    filename: 'bundle.js'
+    filename: "bundle.js"
   },
   watch: false,
   devtool: "source-map",
@@ -34,12 +34,12 @@ const devWebpackOptions = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: [['@babel/preset-env', {
-                debug: true,
-                corejs: 3,
-                useBuiltIns: "usage"
+            presets: [["@babel/preset-env", {
+              debug: true,
+              corejs: 3,
+              useBuiltIns: "usage"
             }]]
           }
         }
@@ -49,9 +49,9 @@ const devWebpackOptions = {
 };
 
 const prodWebpackOptions = {
-  mode: 'production',
+  mode: "production",
   output: {
-    filename: 'bundle.js'
+    filename: "bundle.js"
   },
   module: {
     rules: [
@@ -59,11 +59,11 @@ const prodWebpackOptions = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: [['@babel/preset-env', {
-                corejs: 3,
-                useBuiltIns: "usage"
+            presets: [["@babel/preset-env", {
+              corejs: 3,
+              useBuiltIns: "usage"
             }]]
           }
         }
