@@ -4,14 +4,11 @@ class Slider {
     this.currentIndex = 0;
     this.elem = elem;
 
-    this.controls = Array.from(this.elem.querySelectorAll(`.slider__control`));
+    this.controls = this.elem.querySelectorAll(`.slider__control`);
     this.buttons = this.elem.querySelectorAll(`.slider__button`);
     this.container = this.elem.querySelector(`.slider__slides`);
     this.focusableElemsWithin = this.container.querySelectorAll(`a[href], button`);
-
-    if (this.focusableElemsWithin.length > 0) {
-      this.slides = Array.from(this.container.querySelectorAll(`.slider__item`));
-    }
+    this.slides = this.container.querySelectorAll(`.slider__item`);
   }
 
   setup() {
@@ -27,17 +24,18 @@ class Slider {
   getClosestSlideIndex(elem) {
     let slide = elem.closest(`.slider__item`);
 
-    return this.slides.indexOf(slide);
+    return Array.prototype.indexOf.call(this.slides, slide);
   }
 
   syncSliderElems(index) {
-    let handleControls = () => {
-
+    let changeControl = () => {
       for (let control of this.controls) {
         control.classList.remove(`slider__control--current`);
       }
 
-      this.controls[index].classList.add(`slider__control--current`);
+      if (index < this.controls.length) {
+        this.controls[index].classList.add(`slider__control--current`);
+      }
     };
 
     let showSlide = () => {
@@ -52,11 +50,11 @@ class Slider {
       classes.add(this.CONTAINER_CLASS_NAME_BASE + (index + 1));
     };
 
-    let handleTabindex = () => {
+    let setTabindex = () => {
       for (let elem of this.focusableElemsWithin) {
-        let isShowed = this.getClosestSlideIndex(elem) === index;
+        let isShown = this.getClosestSlideIndex(elem) === index;
 
-        if (isShowed) {
+        if (isShown) {
           elem.removeAttribute(`tabindex`);
         } else {
           elem.setAttribute(`tabindex`, -1);
@@ -64,9 +62,9 @@ class Slider {
       }
     };
 
-    handleControls();
+    changeControl();
     showSlide();
-    handleTabindex();
+    setTabindex();
   }
 
   onSliderClick(evt) {
@@ -85,7 +83,8 @@ class Slider {
   onControlClick(evt, control) {
     evt.preventDefault();
 
-    this.update(this.controls.indexOf(control));
+    let index = Array.prototype.indexOf.call(this.controls, control);
+    this.update(index);
   }
 
   onButtonClick(evt, button) {
@@ -95,7 +94,7 @@ class Slider {
 
     let nextIndex = isPrev ? this.currentIndex - 1 : this.currentIndex + 1;
 
-    if (this.controls[nextIndex]) {
+    if (nextIndex >= 0 && nextIndex < this.slides.length) {
       this.update(nextIndex);
     }
   }
