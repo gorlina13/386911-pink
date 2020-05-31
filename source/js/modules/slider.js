@@ -1,7 +1,7 @@
 class Slider {
   constructor(elem) {
     this.CONTAINER_CLASS_NAME_BASE = `slider__slides--show-`;
-    this.INITIAL_SLIDEINDEX = 0;
+    this.currentIndex = 0;
     this.elem = elem;
 
     this.controls = Array.from(this.elem.querySelectorAll(`.slider__control`));
@@ -15,14 +15,13 @@ class Slider {
   }
 
   setup() {
-    this.syncSliderElems(this.INITIAL_SLIDEINDEX);
-    this.currentSlideIndex = this.INITIAL_SLIDEINDEX;
+    this.syncSliderElems(this.currentIndex);
     this.elem.addEventListener(`click`, this.onSliderClick.bind(this));
   }
 
   update(newIndex) {
     this.syncSliderElems(newIndex);
-    this.currentSlideIndex = newIndex;
+    this.currentIndex = newIndex;
   }
 
   getClosestSlideIndex(elem) {
@@ -94,7 +93,7 @@ class Slider {
 
     let isPrev = button === this.buttons[0];
 
-    let nextIndex = isPrev ? this.currentSlideIndex - 1 : this.currentSlideIndex + 1;
+    let nextIndex = isPrev ? this.currentIndex - 1 : this.currentIndex + 1;
 
     if (this.controls[nextIndex]) {
       this.update(nextIndex);
@@ -105,7 +104,7 @@ class Slider {
 class SliderWithTable extends Slider {
   constructor(elem, firstCellIndex = 1, cellIndexStep = 1) {
     super(elem);
-    this.INITIAL_SLIDEINDEX = 1;
+    this.currentIndex = 1;
     this.firstCellIndex = firstCellIndex;
     this.cellIndexStep = cellIndexStep;
   }
