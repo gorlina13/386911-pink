@@ -14,25 +14,20 @@ function makeNav() {
   }
 }
 
-function makeSliders() {
-  let reviewsElem = document.querySelector(`.slider--reviews`);
-  let tariffsElem = document.querySelector(`.slider--tariffs`);
+function makeSlider(selector, withTable = false) {
+  let elem = document.querySelector(selector);
 
-  if (reviewsElem !== null) {
-    let reviewsSlider = new Slider(reviewsElem);
-    reviewsSlider.setup();
-  }
-
-  if (tariffsElem !== null) {
-    let tariffsSlider = new SliderWithTable(tariffsElem);
-    tariffsSlider.setup();
+  if (elem !== null) {
+    let slider = withTable ? new SliderWithTable(elem) : new Slider(elem);
+    slider.setup();
   }
 }
 
 function work() {
   window.initMap = initMap;
   makeNav();
-  makeSliders();
+  makeSlider(`.slider--reviews`);
+  makeSlider(`.slider--tariffs`, true);
 }
 
 if (document.readyState === `loading`) {
