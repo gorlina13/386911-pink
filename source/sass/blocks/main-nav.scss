@@ -12,9 +12,10 @@
 }
 
 .main-nav__logo {
-  display: block;
+  display: inline-block;
   padding: 1.2222em 1.1111em 1.3888em;
 
+  vertical-align: top;
   @include app-logo-color();
 
   .main-nav--closed & {
@@ -80,6 +81,8 @@
 }
 
 .main-nav--opened .main-nav__toggle {
+  width: 3.5em;
+
   &::before,
   &::after {
     content: "";
