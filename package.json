@@ -60,7 +60,7 @@
     "node": "8.9"
   },
   "dependencies": {
-    "ajv": "^6.11.0",
+    "ajv": "^6.12.3",
     "ajv-keywords": "^3.4.1",
     "npm": "^6.14.4",
     "picturefill": "^3.0.3"
